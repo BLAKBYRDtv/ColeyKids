@@ -79,3 +79,12 @@
 .site-footer input{border-color:rgba(255,255,255,.7);color:#FFFFFF;}
 .crew p,.crew .lead,.crew .crew-head p{color:#FFFFFF;opacity:1;}
 .hero p,.hero .hero-sub{color:#FFFFFF;}
+
+/* ===== Her brand deck (Baby Baby Brand Guidelines v1.0) ===== */
+:root{ --silver:#BEC0C2; }
+.logo img{height:64px;width:auto;}
+@media (max-width:720px){.logo img{height:50px;}}
+.curtain{background:var(--support);}
+.curtain .logo img{height:clamp(200px,34vw,380px);}
+.wordmark-img img{width:min(100%,760px);}
+.wordmark-img img{width:min(100%,560px);}

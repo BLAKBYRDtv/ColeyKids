@@ -1,4 +1,4 @@
-/* Baby Babay — site behaviour + motion. Vanilla JS, no libraries.
+/* Baby Baby — site behaviour + motion. Vanilla JS, no libraries.
    Everything degrades gracefully: content is visible without this file. */
 (function () {
   'use strict';
@@ -337,7 +337,7 @@
     var p = CATALOG[id]; if (!p || !modal) return;
     mState.id = id; mState.size = p.sizes ? '12M' : null;
     var media = $('.modal-media', modal);
-    media.innerHTML = p.book ? '<div class="book ' + p.book.tone + '"><span class="bk-top">Board Book · Baby Babay</span><span class="bk-name">' + p.book.name + '</span><span class="bk-disc"></span></div>' : '<img src="' + p.img + '" alt="' + p.name + '">';
+    media.innerHTML = p.book ? '<div class="book ' + p.book.tone + '"><span class="bk-top">Board Book · Baby Baby</span><span class="bk-name">' + p.book.name + '</span><span class="bk-disc"></span></div>' : '<img src="' + p.img + '" alt="' + p.name + '">';
     $('.modal-body .p-cat', modal).textContent = p.cat;
     $('.modal-body h2', modal).textContent = p.name;
     $('.modal-body .mp', modal).textContent = money(p.price);
@@ -449,7 +449,7 @@
 
   /* ------------------------------------------------------------------
      Little Legends Fund — donate widget.
-     NOT WIRED TO A REAL DESTINATION ON PURPOSE. "paypal.me/BabyBabay" is
+     NOT WIRED TO A REAL DESTINATION ON PURPOSE. "paypal.me/BabyBaby" is
      someone else's unrelated account — never link there. Once there is a
      real PayPal.me handle or Stripe Payment Link, set DONATE_URL_BASE.
      ------------------------------------------------------------------ */
