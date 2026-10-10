@@ -134,3 +134,5 @@
 /* on the yellow hero the sparkles go orange so they read (yellow on yellow disappears) */
 .hero .hl-star path{fill:#F58426 !important;stroke:#006BB6 !important;}
 .hero .hl-star.s2 path,.hero .hl-star.s4 path{fill:#FFFFFF !important;}
+/* centre the big logo in the open space of the yellow panel */
+.hero-logo{align-self:center;margin-top:auto;margin-bottom:auto;}
