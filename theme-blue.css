@@ -140,3 +140,5 @@
 /* header logo hand-off (home page) */
 .site-header .logo{transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1);}
 .site-header.hide-logo .logo{opacity:0;transform:translateY(-16px) scale(.9);pointer-events:none;}
+/* nudge the big logo back up and slightly left of dead-centre */
+@media (min-width:901px){.hero-logo{top:-4vh;left:-5%;}}
