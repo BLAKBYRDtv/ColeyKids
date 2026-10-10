@@ -92,3 +92,24 @@
 .logo .logo-orange{display:none;}
 .site-header.is-over:not(.is-scrolled) .logo .logo-std{display:none;}
 .site-header.is-over:not(.is-scrolled) .logo .logo-orange{display:block;}
+
+/* ===== Client web edits (Oct 10): YELLOW leads the big sections so the orange logo pops ===== */
+:root{ --lead:#FFC72C; }
+.hero,.split-hero,.crew,.site-footer,.menu-overlay{background:var(--lead);color:var(--ink);--cream:#006BB6;}
+.marquee{background:var(--orange);color:#FFFFFF;}
+.marquee-row span svg{color:var(--lead);}
+.site-header.is-over:not(.is-scrolled){color:var(--ink);}
+.site-header.is-over:not(.is-scrolled) .logo .logo-std{display:block;}
+.site-header.is-over:not(.is-scrolled) .logo .logo-orange{display:none;}
+.hero p,.hero .hero-sub,.crew p,.crew .lead,.crew .crew-head p{color:var(--ink);}
+.hero .hero-title em,.hero h1 em{color:var(--orange);-webkit-text-stroke:1.5px var(--ink);}
+.crew .red{color:var(--orange);-webkit-text-stroke:2px var(--ink);}
+.hero-meta,.hero .eyebrow,.crew .eyebrow{color:var(--ink) !important;}
+.site-footer,.site-footer a,.site-footer p,.site-footer small,.site-footer li,.site-footer span,.site-footer h3,.site-footer h4,.site-footer .tiny{color:var(--ink);}
+.site-footer input::placeholder{color:rgba(0,107,182,.75);}
+.site-footer input{border-color:var(--ink);color:var(--ink);}
+.crew-quote{background:var(--ink);color:#FFFFFF;}
+.site-footer .foot-top h4{color:var(--orange);}
+.site-footer .foot-top li a,.site-footer .foot-base,.site-footer .foot-base *{color:var(--ink) !important;}
+.site-footer .foot-top li a:hover{color:var(--orange) !important;}
+.site-footer .foot-base{border-top-color:rgba(0,107,182,.25);}
