@@ -40,3 +40,42 @@
 .hero .btn-red{background:var(--orange);}
 .hero .btn-red::before{background:var(--yellow);}
 .hero .btn-red:hover{color:var(--ink);}
+/* Baby Babay logo (image) */
+.logo img{display:block;height:48px;width:auto;}
+.curtain .logo img{height:clamp(150px,26vw,300px);width:auto;margin-inline:auto;}
+@media (max-width:720px){.logo img{height:38px;}}
+.logo img{height:56px;}
+@media (max-width:720px){.logo img{height:42px;}}
+.wordmark-img{-webkit-text-stroke:0;color:inherit;font-size:0;line-height:0;}
+.wordmark-img img{display:block;width:min(100%,1100px);height:auto;margin-inline:auto;transition:transform .6s var(--ease-out);}
+.wordmark-img:hover{color:inherit;}
+.wordmark-img:hover img{transform:translateY(-6px) rotate(-1.5deg);}
+
+/* ===== Baby Babay: ORANGE is the lead colour, Knicks blue supports ===== */
+:root{ --lead:#F58426; --support:#006BB6; }
+.hero,.split-hero,.crew,.site-footer,.menu-overlay,.curtain,.marquee{background:var(--lead);color:#FFFFFF;}
+.marquee.ink,.announce,.fund,.preview,.contact-card,.charity,.toast{background:var(--support);color:#FFFFFF;}
+.hero .hero-title em,.hero h1 em,.split-hero h1 em{color:var(--support);}
+.hero-meta,.hero .eyebrow{color:var(--support) !important;}
+.hero-badge .core{background:var(--support);color:#FFFFFF;}
+.crew-quote{background:var(--support);color:#FFFFFF;}
+.crew-quote small{color:var(--yellow);}
+.btn-red{background:var(--support);color:#FFFFFF;}
+.btn-red::before{background:var(--yellow);}
+.btn-red:hover{color:var(--support);}
+.hero .btn-red{background:var(--support);}
+.hero .btn-red::before{background:var(--yellow);}
+.hero .btn-red:hover{color:var(--support);}
+.site-header.is-over:not(.is-scrolled){color:#FFFFFF;}
+.marquee-row span svg{color:var(--support);}
+.marquee.ink .marquee-row span svg{color:var(--yellow);}
+.announce-track span::after{color:var(--yellow);}
+.p-badge.new,.size .flag,.bag-count,.cursor{background:var(--lead);color:#FFFFFF;}
+.step.in .step-n{-webkit-text-stroke-color:var(--lead);}
+.idx,.section-num{color:var(--lead);}
+.wordmark-img img{filter:none;}
+.site-footer,.site-footer a,.site-footer p,.site-footer small,.site-footer li,.site-footer span,.site-footer h3,.site-footer h4,.site-footer .tiny{color:#FFFFFF;opacity:1;}
+.site-footer input::placeholder{color:rgba(255,255,255,.85);}
+.site-footer input{border-color:rgba(255,255,255,.7);color:#FFFFFF;}
+.crew p,.crew .lead,.crew .crew-head p{color:#FFFFFF;opacity:1;}
+.hero p,.hero .hero-sub{color:#FFFFFF;}
