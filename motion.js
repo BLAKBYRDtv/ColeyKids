@@ -17,6 +17,69 @@
 })();
 
 // ---------------------------------------------------------------------
+// Homepage hero: rotates between the three genre slides. Crossfade only
+// (opacity), no pin/scroll-jacking. Dots are clickable; reduced-motion
+// users still get the slide change, just without the fade (see CSS).
+// ---------------------------------------------------------------------
+(function () {
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots = document.querySelectorAll('.hero-dot');
+  if (!slides.length) return;
+
+  var current = 0;
+  var rotateMs = 5500;
+  var timer = null;
+
+  function show(n) {
+    current = (n + slides.length) % slides.length;
+    slides.forEach(function (s, idx) {
+      s.classList.toggle('active', idx === current);
+    });
+    dots.forEach(function (d, idx) {
+      d.classList.toggle('active', idx === current);
+    });
+  }
+
+  function restart() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(function () {
+      show(current + 1);
+    }, rotateMs);
+  }
+
+  dots.forEach(function (d, idx) {
+    d.addEventListener('click', function () {
+      show(idx);
+      restart();
+    });
+  });
+
+  restart();
+})();
+
+// ---------------------------------------------------------------------
+// Product tiles: hover reveals a "Quick Add" strip on devices with a
+// mouse (handled entirely in CSS via :hover). Touch devices have no
+// hover, so a tap toggles the same reveal here instead.
+// ---------------------------------------------------------------------
+(function () {
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (canHover) return;
+
+  document.querySelectorAll('.p-card').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (!card.classList.contains('is-open')) {
+        e.preventDefault();
+        document.querySelectorAll('.p-card.is-open').forEach(function (c) {
+          c.classList.remove('is-open');
+        });
+        card.classList.add('is-open');
+      }
+    });
+  });
+})();
+
+// ---------------------------------------------------------------------
 // Little Legends Fund — donate widget. Real functionality (picking an
 // amount), not decoration.
 //

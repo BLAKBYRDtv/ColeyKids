@@ -22,9 +22,9 @@ a:hover{color:var(--ink);}
 button{font-family:inherit;cursor:pointer;border:none;}
 .site{max-width:1440px;margin:0 auto;}
 
-/* ---------- static by design: no transitions, no transforms, no scroll
-   animation anywhere in this file. State changes (hover, active, scrolled)
-   snap instantly instead of easing in. ---------- */
+/* ---------- interaction: cards lift and product tiles reveal more on
+   hover/touch. Page-load and scroll stay static — this is deliberate,
+   contained micro-interaction, not ambient animation. ---------- */
 
 .nav-link{position:relative;font-size:15px;font-weight:500;color:var(--ink);padding-bottom:4px;border-bottom:2px solid transparent;}
 .nav-link:hover{border-bottom-color:var(--accent-dark);}
@@ -32,9 +32,17 @@ button{font-family:inherit;cursor:pointer;border:none;}
 .site-header{position:sticky;top:0;background:var(--bg);z-index:50;}
 .site-header.is-scrolled{box-shadow:0 4px 20px -10px rgba(0,0,0,0.2);}
 .site-header > a:first-child:hover{opacity:.7;}
-.cat-card:hover, .crate-card:hover{border-color:var(--accent);box-shadow:0 10px 24px -14px rgba(0,0,0,0.3);}
-.p-card:hover .p-tile{box-shadow:0 14px 26px -12px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.2);}
+.cat-card, .crate-card{transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+.cat-card:hover, .crate-card:hover{border-color:var(--accent);transform:translateY(-8px);box-shadow:0 20px 36px -16px rgba(0,0,0,0.32);}
+.p-tile{transition:transform .25s ease, box-shadow .25s ease;}
+.p-card:hover .p-tile, .p-card.is-open .p-tile{transform:translateY(-6px);box-shadow:0 18px 32px -14px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.22);}
 a[style*="background:var(--accent)"]:hover, .cta-btn:hover, button:hover{filter:brightness(1.08);}
+
+/* product tile "quick add" reveal — sits under the icon/stamp, slides up
+   on hover (desktop) or tap (touch, toggled by motion.js) */
+.p-reveal{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0));padding:30px 10px 10px;display:flex;justify-content:center;transform:translateY(65%);transition:transform .28s ease;pointer-events:none;}
+.p-card:hover .p-reveal, .p-card.is-open .p-reveal{transform:translateY(0);}
+.p-reveal span{color:white;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.65);padding-bottom:2px;}
 .crate-band{position:relative;overflow:hidden;}
 .crate-band::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 20% 10%,rgba(255,255,255,0.1),transparent 55%);}
 .crate-band .icircle{position:relative;z-index:1;box-shadow:0 8px 16px -6px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.3);}
@@ -64,15 +72,24 @@ a[style*="background:var(--accent)"]:hover, .cta-btn:hover, button:hover{filter:
 .marquee-track span::after{content:"•";margin-left:28px;color:var(--accent);opacity:.85;}
 .marquee-track span:last-child::after{content:"";margin-left:0;}
 
-/* ---------- big-photo hero feature ---------- */
-.hero-feature{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink);}
+/* ---------- big-photo hero feature, rotating slides ---------- */
+.hero-feature{position:relative;min-height:92vh;overflow:hidden;background:var(--ink);}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .9s ease;z-index:0;}
+.hero-slide.active{opacity:1;pointer-events:auto;z-index:1;}
 .hero-feature .hero-photo{position:absolute;inset:0;background-size:cover;background-position:center 30%;}
 .hero-feature .hero-scrim{position:absolute;inset:0;background:linear-gradient(0deg, rgba(8,7,5,0.94) 0%, rgba(8,7,5,0.6) 35%, rgba(8,7,5,0.12) 62%, rgba(8,7,5,0.5) 100%);}
 .hero-feature .hero-content{position:relative;z-index:2;padding:0 64px 76px;max-width:920px;}
 .hero-feature .display-xl{font-size:clamp(48px,8.4vw,124px);line-height:0.9;color:var(--bg);}
 .hero-eyebrow{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--bg);opacity:.75;}
+.hero-dots{position:absolute;left:50%;bottom:66px;transform:translateX(-50%);z-index:4;display:flex;gap:10px;}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);border:none;padding:0;cursor:pointer;transition:width .3s ease, background .3s ease;}
+.hero-dot.active{background:var(--bg);width:24px;border-radius:4px;}
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--bg);opacity:.75;}
 .scroll-cue span{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;}
+@media (prefers-reduced-motion: reduce){
+  .hero-slide{transition:none;}
+  .cat-card, .crate-card, .p-tile, .p-reveal, .hero-dot{transition:none;}
+}
 
 /* ---------- featured crate layout: hip hop leads, others ride along ---------- */
 .crate-feature-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:24px;}
