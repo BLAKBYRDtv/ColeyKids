@@ -116,3 +116,21 @@
 
 /* EDM board book: Knicks blue with an electric yellow glow */
 .book.b-edm{background:radial-gradient(90% 70% at 85% 15%, rgba(255,199,44,.55), transparent 60%),radial-gradient(120% 90% at 20% 10%, #1E8AD6, #004E86);}
+
+/* Big hero logo with sparkle accents (top of the yellow hero panel) */
+.hero-logo{position:relative;align-self:flex-start;margin-bottom:auto;width:clamp(220px,25vw,400px);}
+.hero-copy{padding-top:calc(var(--header-h) + 28px);gap:22px;}
+.hl-star path{fill:#FFC72C !important;stroke:#006BB6 !important;}
+.hero-logo img{display:block;width:100%;height:auto;animation:hlFloat 5s ease-in-out infinite;transform-origin:50% 80%;}
+.hl-star{position:absolute;pointer-events:none;animation:hlTwinkle 2.6s ease-in-out infinite;}
+.hl-star.s1{width:16%;right:-7%;top:-6%;}
+.hl-star.s2{width:8%;right:-13%;top:12%;animation-delay:.6s;}
+.hl-star.s3{width:10%;left:-7%;bottom:6%;animation-delay:1.2s;}
+.hl-star.s4{width:6%;left:44%;top:-11%;animation-delay:1.8s;}
+@keyframes hlFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(-1.2deg)}}
+@keyframes hlTwinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.62) rotate(45deg);opacity:.85}}
+@media (max-width:900px){.hero-logo{width:min(72vw,320px);margin:4px auto 6px;align-self:center;}}
+@media (prefers-reduced-motion:reduce){.hero-logo img,.hl-star{animation:none}}
+/* on the yellow hero the sparkles go orange so they read (yellow on yellow disappears) */
+.hero .hl-star path{fill:#F58426 !important;stroke:#006BB6 !important;}
+.hero .hl-star.s2 path,.hero .hl-star.s4 path{fill:#FFFFFF !important;}
