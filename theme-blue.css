@@ -1,0 +1,42 @@
+/* Coley Kids — blue / orange / yellow colourway preview (loads after styles.css) */
+:root{
+  /* ONLY Knicks blue, orange, yellow. Plain white is just the paper behind reading text. */
+  --red:#006BB6; --red-hot:#F58426; --red-dark:#F58426; --on-red:#FFFFFF; --yellow:#FFC72C; --orange:#F58426;
+  --ink:#006BB6; --ink-2:#006BB6; --ink-soft:#006BB6; --ink-mute:#006BB6; --line:#B3D3E9; --line-dark:rgba(255,199,44,.45);
+  --cream:#FFFFFF; --cream-2:#E6F0F8; --cream-3:#CCE1F0;
+}
+.logo em,.site-header.is-over:not(.is-scrolled) .logo em{color:var(--orange);}
+.curtain .logo em{color:var(--yellow);}
+.curtain .logo{color:#FFFFFF;}
+.announce-track span::after{color:var(--yellow);}
+.marquee-row span svg{color:var(--yellow);}
+.hero-badge .core{background:var(--orange);color:#FFFFFF;}
+.btn-red{background:var(--orange);color:var(--ink);}
+.btn-red::before{background:var(--yellow);}
+.btn-red:hover{color:var(--ink);}
+.btn-ink::before{background:var(--orange);}
+.fund .btn-ink:hover{color:var(--ink);}
+.p-add:hover{background:var(--orange);color:var(--ink);}
+.cursor{background:var(--orange);}
+.cursor span{color:var(--ink);}
+.crew-quote{background:var(--orange);color:var(--ink);}
+.size .flag,.p-badge.new{background:var(--orange);color:var(--ink);}
+.theme .tick{background:var(--orange);}
+.theme.is-on{box-shadow:0 0 0 3px var(--cream), 0 0 0 5.5px var(--orange), 0 24px 40px -22px rgba(0,107,182,.6);}
+.bag-count{background:var(--orange);color:var(--ink);}
+.hero-meta{color:var(--yellow);}
+.step.in .step-n{-webkit-text-stroke-color:var(--red);}
+.wordmark:hover{color:var(--orange);-webkit-text-stroke-color:var(--orange);}
+.band .eyebrow{color:var(--yellow) !important;}
+
+/* strict: orange accents carry white or blue type, never navy */
+.btn-red,.btn-red:hover,.p-add:hover,.cursor span,.crew-quote,.size .flag,.p-badge.new,.bag-count{color:#FFFFFF;}
+.crew-quote small{color:var(--yellow);}
+.btn-red::before{background:var(--yellow);} .btn-red:hover{color:var(--ink);}
+/* primary buttons: Knicks blue, orange wipe on hover */
+.btn-red{background:var(--red);color:#FFFFFF;}
+.btn-red::before{background:var(--orange);}
+.btn-red:hover{color:#FFFFFF;}
+.hero .btn-red{background:var(--orange);}
+.hero .btn-red::before{background:var(--yellow);}
+.hero .btn-red:hover{color:var(--ink);}
