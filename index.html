@@ -10,13 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4"><link rel="stylesheet" href="theme-blue.css?v=14">
+<link rel="stylesheet" href="styles.css?v=4"><link rel="stylesheet" href="theme-blue.css?v=15">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__coley)document.documentElement.classList.remove('js')},3000);</script>
 </head>
 <body class="home">
 <div class="curtain" aria-hidden="true"><span class="logo"><img src="img/logo-baby-babay-stacked.svg?v=10" alt=""></span></div>
 <div class="announce" aria-label="Store news"><div class="announce-track"><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span></div></div>
-<header class="site-header is-over">
+<header class="site-header is-over hide-logo">
   <button class="icon-btn menu-btn" type="button" data-menu-open aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
   <a class="logo" href="index.html" aria-label="Baby Babay home"><img class="logo-std" src="img/logo-baby-babay.svg?v=10" alt="Baby Babay" width="91" height="64"><img class="logo-orange" src="img/logo-baby-babay-on-orange.svg?v=10" alt="" aria-hidden="true" width="91" height="64"></a>
   <nav class="nav" aria-label="Main"><a class="nav-link" href="shop.html"><span data-text="Shop">Shop</span></a><a class="nav-link" href="gift-crates.html"><span data-text="Gift Crates">Gift Crates</span></a><a class="nav-link" href="giving-back.html"><span data-text="Give Back">Give Back</span></a><a class="nav-link" href="about.html"><span data-text="About">About</span></a></nav>
@@ -296,5 +296,12 @@
 <div class="toast" role="status" aria-live="polite"></div>
 <div class="cursor" aria-hidden="true"><span></span></div>
 <script src="site.js?v=11" defer></script>
+<script>
+/* Home page: the header logo stays hidden while the big hero logo is on screen,
+   then slides into the header as the big one scrolls up and out. */
+(function(){var h=document.querySelector('.site-header'),b=document.querySelector('.hero-logo');
+if(!h||!b||!('IntersectionObserver' in window)){if(h)h.classList.remove('hide-logo');return;}
+new IntersectionObserver(function(e){h.classList.toggle('hide-logo',e[0].isIntersecting);},{rootMargin:'-80px 0px 0px 0px',threshold:0}).observe(b);})();
+</script>
 </body>
 </html>
