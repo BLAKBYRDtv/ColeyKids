@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coley Kids — Shop À La Carte</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+
+ <!-- HEADER -->
+ <div class="site-header">
+ <a href="index.html" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:28px;color:var(--ink);">Coley <span style="color:var(--accent-dark);">Kids</span></a>
+ <div style="display:flex;gap:40px;align-items:center;">
+ <a href="shop.html" class="nav-link active">Shop</a>
+ <a href="gift-crates.html" class="nav-link">Gift Crates</a>
+ <a href="giving-back.html" class="nav-link">Give Back</a>
+ <a href="about.html" class="nav-link">About</a>
+ </div>
+ <div style="display:flex;gap:22px;align-items:center;">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+ </div>
+ </div>
+
+ <!-- TITLE + FILTERS -->
+ <div style="padding:64px 64px 40px;">
+ <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">À La Carte</span>
+ <h1 style="font-size:44px;margin-top:12px;">Shop À La Carte</h1>
+ <p style="margin-top:12px;color:var(--ink-soft);font-size:16px;">Every item from our gift crates, available on its own.</p>
+ <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+ <button style="background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:600;">All</button>
+ <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Apparel</button>
+ <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Accessories</button>
+ <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Toys</button>
+ <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Gifts</button>
+ </div>
+ </div>
+
+ <!-- PRODUCT GRID -->
+ <div class="grid-4" style="padding:0 64px 96px;display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:32px 28px;">
+
+ <div class="p-card">
+ <span class="p-badge">Best Seller</span>
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.72), rgba(10,10,10,0.3) 55%), url('https://images.pexels.com/photos/20571056/pexels-photo-20571056.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <div style="position:relative;z-index:2;text-align:center;padding:0 10px;font-family:'Bebas Neue',Impact,sans-serif;color:white;line-height:1.05;text-shadow:0 2px 6px rgba(0,0,0,0.5);">
+ <div style="font-size:11px;letter-spacing:0.18em;opacity:0.8;">EST. OLD SCHOOL</div>
+ <div style="font-size:22px;">RAISED ON<br>THE CLASSICS</div>
+ </div>
+ </div>
+ <div class="p-cat">Apparel</div>
+ <div class="p-name">Graphic Tee Onesie</div>
+ <div class="p-price">$24</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/27177703/pexels-photo-27177703.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M14 8h20v12h-7v18a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V26h-2v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V20h-1V8z" fill="rgba(255,255,255,0.18)"></path>
+ <path d="M17 8V4M31 8V4" stroke-width="1.6"></path>
+ <circle cx="17" cy="4" r="1.3" fill="white" stroke="none"></circle>
+ <circle cx="31" cy="4" r="1.3" fill="white" stroke="none"></circle>
+ <rect x="20" y="12" width="8" height="7" rx="0.5" stroke-width="1.3"></rect>
+ <line x1="14" y1="20" x2="34" y2="20" stroke-dasharray="2 2" stroke-width="1.2"></line>
+ </svg>
+ </div>
+ <div class="p-cat">Apparel</div>
+ <div class="p-name">Denim Overall Set</div>
+ <div class="p-price">$42</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/9305088/pexels-photo-9305088.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M24 10c-6 0-11 2-11 2v6c0 10 4 18 11 18s11-8 11-18v-6s-5-2-11-2z" fill="rgba(255,255,255,0.18)"></path>
+ <path d="M24 10v-3" stroke-width="1.6"></path>
+ <circle cx="24" cy="6" r="1.6" fill="white" stroke="none"></circle>
+ <path d="M27 20l-4 7h3l-2 6 6-9h-3z" stroke-width="1.3" stroke-linejoin="round"></path>
+ </svg>
+ </div>
+ <div class="p-cat">Accessories</div>
+ <div class="p-name">Rockstar Bib</div>
+ <div class="p-price">$16</div>
+ </div>
+
+ <div class="p-card">
+ <span class="p-badge">Best Seller</span>
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/28775658/pexels-photo-28775658.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M20 10a4 4 0 0 1 8 0" stroke-width="1.6"></path>
+ <rect x="8" y="14" width="32" height="22" rx="5" fill="rgba(255,255,255,0.18)"></rect>
+ <circle cx="18" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
+ <circle cx="30" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
+ <line x1="18" y1="22" x2="18" y2="28" stroke-width="1.2"></line>
+ <line x1="15" y1="25" x2="21" y2="25" stroke-width="1.2"></line>
+ <line x1="30" y1="22" x2="30" y2="28" stroke-width="1.2"></line>
+ <line x1="27" y1="25" x2="33" y2="25" stroke-width="1.2"></line>
+ <rect x="20" y="17" width="8" height="4" rx="1" stroke-width="1.3"></rect>
+ </svg>
+ </div>
+ <div class="p-cat">Accessories</div>
+ <div class="p-name">Cassette-Tape Teether</div>
+ <div class="p-price">$14</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/35996807/pexels-photo-35996807.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(28 24 24)" stroke-width="1.1" opacity="0.4" fill="rgba(255,255,255,0.12)"></path>
+ <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(6 24 24)" stroke-width="1.3" opacity="0.65" fill="rgba(255,255,255,0.14)"></path>
+ <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(-18 24 24)" fill="rgba(255,255,255,0.2)"></path>
+ <circle cx="12" cy="12" r="2" stroke-width="1.4"></circle>
+ <path d="M13.4 13.4L18 18" stroke-width="1.4"></path>
+ </svg>
+ </div>
+ <div class="p-cat">Accessories</div>
+ <div class="p-name">Guitar-Pick Clip Set</div>
+ <div class="p-price">$16</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/6624196/pexels-photo-6624196.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="6" y="18" width="36" height="12" rx="4" fill="rgba(255,255,255,0.18)"></rect>
+ <line x1="12" y1="18" x2="12" y2="30" stroke-width="1.2"></line>
+ <line x1="17" y1="18" x2="17" y2="30" stroke-width="1.2"></line>
+ <line x1="22" y1="18" x2="22" y2="30" stroke-width="1.2"></line>
+ <line x1="27" y1="18" x2="27" y2="30" stroke-width="1.2"></line>
+ <line x1="32" y1="18" x2="32" y2="30" stroke-width="1.2"></line>
+ <line x1="37" y1="18" x2="37" y2="30" stroke-width="1.2"></line>
+ </svg>
+ </div>
+ <div class="p-cat">Accessories</div>
+ <div class="p-name">Harmonica Teether</div>
+ <div class="p-price">$14</div>
+ </div>
+
+ <div class="p-card">
+ <span class="p-badge new">New</span>
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/7833961/pexels-photo-7833961.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M14 12V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke-width="1.4"></path>
+ <path d="M10 16a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v14H10z" fill="rgba(255,255,255,0.18)"></path>
+ <circle cx="17" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
+ <circle cx="31" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
+ <circle cx="17" cy="23" r="1.6" fill="white" stroke="none"></circle>
+ <circle cx="31" cy="23" r="1.6" fill="white" stroke="none"></circle>
+ <rect x="21" y="14" width="6" height="3" rx="1" stroke-width="1.3"></rect>
+ <circle cx="12" cy="34" r="3"></circle>
+ <circle cx="36" cy="34" r="3"></circle>
+ </svg>
+ </div>
+ <div class="p-cat">Toys</div>
+ <div class="p-name">Wooden Boombox Push Toy</div>
+ <div class="p-price">$28</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/16438729/pexels-photo-16438729.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <ellipse cx="18" cy="30" rx="15" ry="4" fill="rgba(0,0,0,0.1)"></ellipse>
+ <path d="M10 30c0-9 4-17 8-17s8 8 8 17" fill="rgba(255,255,255,0.18)"></path>
+ <path d="M10.5 26h15" stroke-width="1.3"></path>
+ <path d="M31 22c3 1 5 3 5 5" stroke-width="1.5"></path>
+ <circle cx="38" cy="30" r="3.5"></circle>
+ </svg>
+ </div>
+ <div class="p-cat">Toys</div>
+ <div class="p-name">Cowboy Hat Rattle</div>
+ <div class="p-price">$18</div>
+ </div>
+
+ <div class="p-card">
+ <span class="p-badge">Best Seller</span>
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/6255730/pexels-photo-6255730.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="8" y="12" width="32" height="26" rx="8" fill="rgba(255,255,255,0.18)"></rect>
+ <rect x="6" y="9" width="6" height="6" rx="2" stroke-width="1.4" fill="rgba(255,255,255,0.16)"></rect>
+ <rect x="36" y="9" width="6" height="6" rx="2" stroke-width="1.4" fill="rgba(255,255,255,0.16)"></rect>
+ <circle cx="18" cy="24" r="1.3" fill="white" stroke="none"></circle>
+ <circle cx="30" cy="24" r="1.3" fill="white" stroke="none"></circle>
+ <path d="M18 31a6 6 0 0 0 12 0" stroke-width="1.4"></path>
+ </svg>
+ </div>
+ <div class="p-cat">Toys</div>
+ <div class="p-name">Plush Cassette Buddy</div>
+ <div class="p-price">$26</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/3661368/pexels-photo-3661368.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
+ <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
+ <circle cx="24" cy="16" r="4" stroke-width="1.4"></circle>
+ <line x1="24" y1="20" x2="24" y2="27" stroke-width="1.4"></line>
+ <path d="M19 22a5 5 0 0 0 10 0" stroke-width="1.3"></path>
+ <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
+ </svg>
+ </div>
+ <div class="p-cat">Gifts</div>
+ <div class="p-name">LPBD: Tupac Shakur</div>
+ <div class="p-price">$15</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/8775874/pexels-photo-8775874.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
+ <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
+ <path d="M26 10l-8 12h6l-3 11 10-14h-6z" stroke-width="1.3" stroke-linejoin="round"></path>
+ <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
+ </svg>
+ </div>
+ <div class="p-cat">Gifts</div>
+ <div class="p-name">LPBD: David Bowie</div>
+ <div class="p-price">$15</div>
+ </div>
+
+ <div class="p-card">
+ <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/3661368/pexels-photo-3661368.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
+ <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
+ <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
+ <path d="M24 11l2.6 6.8 7.2 0.4-5.7 4.6 2 7-6.1-4-6.1 4 2-7-5.7-4.6 7.2-0.4z" stroke-width="1.3" stroke-linejoin="round"></path>
+ <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
+ </svg>
+ </div>
+ <div class="p-cat">Gifts</div>
+ <div class="p-name">LPBD: Dolly Parton</div>
+ <div class="p-price">$15</div>
+ </div>
+
+ </div>
+
+ <!-- FOOTER -->
+ <div style="padding:64px;display:flex;justify-content:space-between;gap:48px;border-top:1px solid var(--line);flex-wrap:wrap;">
+ <div style="display:flex;flex-direction:column;gap:16px;max-width:320px;">
+ <div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:24px;">Coley <span style="color:var(--accent-dark);">Kids</span></div>
+ <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">Music-themed gifts and everyday essentials for little ones.</div>
+ </div>
+ <div style="display:flex;gap:64px;flex-wrap:wrap;">
+ <div style="display:flex;flex-direction:column;gap:12px;">
+ <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Shop</div>
+ <a href="shop.html" style="font-size:14px;color:var(--ink);">Apparel</a>
+ <a href="shop.html" style="font-size:14px;color:var(--ink);">Accessories</a>
+ <a href="shop.html" style="font-size:14px;color:var(--ink);">Toys</a>
+ <a href="shop.html" style="font-size:14px;color:var(--ink);">Gifts</a>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:12px;">
+ <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Gift Crates</div>
+ <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Old School Hip Hop</a>
+ <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Rock N' Roll</a>
+ <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Country</a>
+ </div>
+ </div>
+ </div>
+ <div class="site-footer-links" style="justify-content:flex-start;"><div>© 2026 Coley Kids. All rights reserved.</div></div>
+
+</div><script src="motion.js" defer></script>
+</body>
+</html>
