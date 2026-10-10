@@ -88,3 +88,7 @@
 .curtain .logo img{height:clamp(200px,34vw,380px);}
 .wordmark-img img{width:min(100%,760px);}
 .wordmark-img img{width:min(100%,560px);}
+/* On orange grounds the logo switches to blue letters / white keyline / yellow shadow */
+.logo .logo-orange{display:none;}
+.site-header.is-over:not(.is-scrolled) .logo .logo-std{display:none;}
+.site-header.is-over:not(.is-scrolled) .logo .logo-orange{display:block;}
