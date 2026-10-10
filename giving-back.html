@@ -2,132 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coley Kids — Little Legends Fund</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Little Legends Fund — Coley Kids</title>
+<meta name="description" content="A share of every Old School Hip Hop crate goes to the Little Legends Fund, putting instruments and music time in kids&#x27; hands.">
+<meta name="theme-color" content="#141010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__coley)document.documentElement.classList.remove('js')},3000);</script>
 </head>
-<body>
-<div class="site">
+<body class="giving">
+<div class="curtain" aria-hidden="true"><span class="logo">Coley <em>Kids</em></span></div>
+<div class="announce" aria-label="Store news"><div class="announce-track"><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span></div></div>
+<header class="site-header">
+  <button class="icon-btn menu-btn" type="button" data-menu-open aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  <a class="logo" href="index.html" aria-label="Coley Kids home">Coley <em>Kids</em></a>
+  <nav class="nav" aria-label="Main"><a class="nav-link" href="shop.html"><span data-text="Shop">Shop</span></a><a class="nav-link" href="gift-crates.html"><span data-text="Gift Crates">Gift Crates</span></a><a class="nav-link active" href="giving-back.html"><span data-text="Give Back">Give Back</span></a><a class="nav-link" href="about.html"><span data-text="About">About</span></a></nav>
+  <div class="header-actions">
+    <a class="icon-btn" href="shop.html" aria-label="Search the shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></a>
+    <button class="icon-btn" type="button" data-open-bag aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 8h14l-1.2 12.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="bag-count">0</span></button>
+  </div>
+</header>
+<div class="menu-overlay" aria-hidden="true">
+  <button class="icon-btn close" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul class="menu-links"><li><a href="index.html"><span>Home</span></a></li><li><a href="shop.html"><span>Shop</span></a></li><li><a href="gift-crates.html"><span>Gift Crates</span></a></li><li><a href="giving-back.html"><span>Give Back</span></a></li><li><a href="about.html"><span>About</span></a></li></ul>
+  <p class="menu-foot">Raised on the classics.</p>
+</div>
 
- <!-- HEADER -->
- <div class="site-header">
- <a href="index.html" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:28px;color:var(--ink);">Coley <span style="color:var(--accent-dark);">Kids</span></a>
- <div style="display:flex;gap:40px;align-items:center;">
- <a href="shop.html" class="nav-link">Shop</a>
- <a href="gift-crates.html" class="nav-link">Gift Crates</a>
- <a href="giving-back.html" class="nav-link active">Give Back</a>
- <a href="about.html" class="nav-link">About</a>
- </div>
- <div style="display:flex;gap:22px;align-items:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
- </div>
- </div>
+<main>
+  <section class="split-hero">
+    <div class="sh-copy">
+      <span class="eyebrow" style="color:var(--red-hot)" data-reveal>Little Legends Fund</span>
+      <h1 data-lines><span class="ln"><span>Music</span></span><span class="ln"><span>Shouldn't Be</span></span><span class="ln"><span>A <em>Luxury.</em></span></span></h1>
+      <p class="lede" data-reveal style="--d:150ms">We're building the Little Legends Fund — a share of Old School Hip Hop crate sales, set aside to get real instruments, headphones and music-education time into the hands of kids who wouldn't have them otherwise.</p>
+      <div data-reveal style="--d:250ms"><a class="btn btn-red" href="#charity-crate">See the Charity Crate <span class="arrow">→</span></a></div>
+    </div>
+    <div class="sh-media"><img src="img/giving.jpg" alt="Smiling boy in a red shirt against a dark background" data-reveal="clip" width="900" height="1080"></div>
+  </section>
+  <section class="section wrap">
+    <div class="sec-head">
+      <div style="display:flex;flex-direction:column;gap:18px"><span class="eyebrow" data-reveal>Why We Started This</span><h2 class="display d-l" style="max-width:18ch" data-lines><span class="ln"><span>Every crate exists because</span></span><span class="ln"><span>someone put music in a</span></span><span class="ln"><span>kid's hands early.</span></span></h2></div>
+      <p class="lede" data-reveal>Not every kid gets that. The Little Legends Fund is our way of putting some of that access back — starting small, starting local, and growing with the shop.</p>
+    </div>
+    <div class="give-steps">
+      <div class="step"><span class="step-n">01</span><h3>You Shop A Crate</h3><p>Old School Hip Hop crates will count toward the fund, with the planned Charity Crate giving the most.</p></div>
+      <div class="step"><span class="step-n">02</span><h3>We Set It Aside</h3><p>The plan: a set share of each sale goes into the fund, kept separate from the rest of the business.</p></div>
+      <div class="step"><span class="step-n">03</span><h3>It Goes Local</h3><p>We'll partner with youth music programs to fund instruments, headphones and lesson time — details as partnerships come together.</p></div>
+    </div>
+  </section>
+  <section class="section wrap" style="padding-top:0">
+    <div class="donate">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span class="eyebrow" data-reveal>Give Directly</span>
+        <h2 class="display d-l" data-lines><span class="ln"><span>Skip The Crate.</span></span><span class="ln"><span><span class="red">Just Chip In.</span></span></span></h2>
+        <p class="lede" data-reveal>Every dollar here goes straight into the fund — no product attached.</p>
+      </div>
+      <div class="donate-card" data-reveal>
+        <div class="amts"><button type="button" class="amt-btn" data-amt="10">$10</button><button type="button" class="amt-btn" data-amt="25">$25</button><button type="button" class="amt-btn" data-amt="50">$50</button><button type="button" class="amt-btn" data-amt="100">$100</button></div>
+        <div class="custom-amt"><span>Or enter your own:</span><label>$<input id="customAmt" type="number" min="1" step="1" placeholder="Amount" aria-label="Custom amount"></label></div>
+        <a id="donateBtn" class="btn btn-ink" href="#"><span data-amt-label>Donate $25</span> <span class="arrow">→</span></a>
+        <p id="donateNote" aria-live="polite">Online giving is being set up — check back soon.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section wrap" style="background:var(--ink);color:var(--cream)">
+    <div class="donate" style="align-items:start">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span class="eyebrow" style="color:var(--red-hot)" data-reveal>Our Goal</span>
+        <h2 class="display d-l" data-lines><span class="ln"><span>Fund Our First</span></span><span class="ln"><span>Youth Music</span></span><span class="ln"><span><span style="color:var(--red-hot)">Program.</span></span></span></h2>
+        <p class="lede" style="color:oklch(98% 0.006 85 / .7)" data-reveal>That's the honest starting line — a young shop putting its money where its story is. We'll share who we're working with and what it funded as soon as it's real, not before.</p>
+      </div>
+      <div class="timeline" data-reveal>
+        <div class="tl"><b>Now</b><p>Setting up the fund alongside the shop's launch.</p></div>
+        <div class="tl"><b>Next</b><p>Partner with local youth music programs and choose our first recipient together.</p></div>
+        <div class="tl"><b>Then</b><p>Report back here — what we gave, where it went, and what it bought.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section wrap" id="charity-crate" style="scroll-margin-top:100px">
+    <div class="charity" data-reveal>
+      <div class="charity-media"><img src="img/charity.jpg" alt="Boy in a number 3 jersey holding a basketball and pointing" loading="lazy"></div>
+      <div class="charity-body">
+        <span class="p-badge new" style="position:static;align-self:flex-start">Coming Soon</span>
+        <h3>The Little Legends<br>Charity Crate</h3>
+        <p>Our Old School Hip Hop Classic Crate, with a bigger share of every sale going to the fund. Until it launches, build the Hip Hop crate.</p>
+        <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap"><a class="btn btn-red" href="gift-crates.html#hiphop">Build the Hip Hop crate <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <h3>Stay in<br>the loop.</h3>
+      <form class="news" novalidate><label class="sr-only" for="newsEmail">Email</label><input id="newsEmail" type="email" placeholder="Your email for new drops"><button type="submit">Join →</button></form>
+      <p class="news-note" aria-live="polite"></p>
+    </div>
+    <div><h4>Shop</h4><ul><li><a href="shop.html#apparel">Apparel</a></li><li><a href="shop.html#accessories">Accessories</a></li><li><a href="shop.html#toys">Toys</a></li><li><a href="shop.html#gifts">Gifts</a></li></ul></div>
+    <div><h4>Crates</h4><ul><li><a href="gift-crates.html#hiphop">Old School Hip Hop</a></li><li><a href="gift-crates.html#rock">Rock N' Roll</a></li><li><a href="gift-crates.html#country">Country</a></li><li><a href="gift-crates.html">Build Your Own</a></li></ul></div>
+    <div><h4>Coley Kids</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="giving-back.html">Little Legends Fund</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+  </div>
+  <div class="wordmark" aria-hidden="true">Coley Kids</div>
+  <div class="foot-base"><span>© 2026 Coley Kids. All rights reserved.</span><span>Hip hop is culture. Raise them on it.</span></div>
+</footer>
 
- <!-- HERO: dark, photo-backed, same system as the homepage -->
- <div class="hero-feature" style="min-height:70vh;">
- <div class="hero-photo" style="background-image:url('https://images.pexels.com/photos/17326185/pexels-photo-17326185.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
- <div class="hero-scrim"></div>
- <div class="hero-copy hero-content">
- <div class="hero-eyebrow">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0-3-2.4-4.8-5-4.8-1.7 0-3.2.9-4.1 2.3C10.8 4.7 9.3 3.8 7.6 3.8c-2.6 0-5 1.8-5 4.8 0 5.4 9.7 10.4 9.7 10.4h.1s9.7-5 9.7-10.4z"></path></svg>
- Little Legends Fund
- </div>
- <h1 class="display-xl">Music shouldn't<br>be a luxury.</h1>
- <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,0.85);max-width:480px;margin-top:20px;">A share of every Old School Hip Hop crate goes into the Little Legends Fund — our commitment to getting real instruments, headphones, and music-education time into the hands of kids who wouldn't have them otherwise.</p>
- <div style="display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;">
- <a href="#charity-crate" class="cta-btn" style="background:var(--accent);color:var(--accent-ink);padding:16px 30px;border-radius:2px;font-size:15px;font-weight:700;display:inline-block;">Shop the Charity Crate</a>
- </div>
- </div>
- </div>
-
- <!-- WHY -->
- <div style="padding:96px 64px;max-width:760px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">Why We Started This</span>
- <h2 style="font-size:34px;margin-top:12px;">Every crate we sell exists because someone put music in a kid's hands early.</h2>
- <p style="font-size:16px;color:var(--ink-soft);margin-top:16px;line-height:1.7;">That's the whole premise of Coley Kids. Not every kid gets that. Some grow up without an instrument to touch, a program to join, or someone to show them a first chord. The Little Legends Fund is our way of putting a little of that access back — starting small, starting local, and growing with the shop.</p>
- </div>
-
- <!-- HOW IT WORKS -->
- <div class="grid-3" style="padding:0 64px 96px;display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:48px;">
- <div style="display:flex;flex-direction:column;gap:12px;">
- <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:56px;color:var(--accent-dark);">01</div>
- <div style="font-size:18px;font-weight:600;">You shop a crate</div>
- <div style="font-size:15px;color:var(--ink-soft);line-height:1.6;">Any Old School Hip Hop crate counts — the Charity Crate below gives the most, but every crate contributes something.</div>
- </div>
- <div style="display:flex;flex-direction:column;gap:12px;">
- <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:56px;color:var(--accent-dark);">02</div>
- <div style="font-size:18px;font-weight:600;">We set the share aside</div>
- <div style="font-size:15px;color:var(--ink-soft);line-height:1.6;">A fixed amount from every sale goes straight into the fund — tracked separately from the rest of the business.</div>
- </div>
- <div style="display:flex;flex-direction:column;gap:12px;">
- <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:56px;color:var(--accent-dark);">03</div>
- <div style="font-size:18px;font-weight:600;">It goes to local programs</div>
- <div style="font-size:15px;color:var(--ink-soft);line-height:1.6;">We're partnering with youth music programs to put it toward instruments, headphones, and lesson time — details as partnerships are finalized.</div>
- </div>
- </div>
-
- <!-- DONATE DIRECTLY -->
- <div style="padding:0 64px 96px;">
- <div style="max-width:640px;margin-bottom:32px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">Give Directly</span>
- <h2 style="font-size:34px;margin-top:12px;">Skip the crate. Just chip in.</h2>
- <p style="font-size:16px;color:var(--ink-soft);margin-top:12px;line-height:1.6;">Every dollar here goes straight into the fund — no product attached.</p>
- </div>
- <div style="max-width:520px;background:var(--bg-card);border:1px solid var(--line);border-radius:6px;padding:32px;display:flex;flex-direction:column;gap:20px;">
- <div style="display:flex;gap:10px;flex-wrap:wrap;">
- <button type="button" class="amt-btn" data-amt="10">$10</button>
- <button type="button" class="amt-btn" data-amt="25">$25</button>
- <button type="button" class="amt-btn" data-amt="50">$50</button>
- <button type="button" class="amt-btn" data-amt="100">$100</button>
- </div>
- <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
- <span style="font-size:14px;color:var(--ink-soft);">Or enter your own:</span>
- <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:2px;overflow:hidden;">
- <span style="padding:10px 4px 10px 12px;color:var(--ink-soft);font-size:14px;">$</span>
- <input id="customAmt" type="number" min="1" step="1" placeholder="Amount" style="border:none;padding:10px 12px 10px 4px;font-size:14px;font-family:inherit;width:100px;">
- </div>
- </div>
- <a id="donateBtn" class="cta-btn" href="#" style="background:var(--accent);color:var(--accent-ink);padding:16px 28px;border-radius:2px;font-size:15px;font-weight:700;text-align:center;">Donate $25</a>
- <div id="donateNote" style="font-size:12px;color:var(--ink-soft);line-height:1.5;">Online giving is being set up — check back soon.</div>
- </div>
- </div>
-
- <!-- GOAL -->
- <div style="padding:64px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
- <div style="max-width:520px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:600;">Our Goal</span>
- <h2 style="font-size:30px;margin-top:12px;color:var(--bg);">Fund our first youth music program this year.</h2>
- <p style="font-size:15px;color:rgba(255,255,255,0.7);margin-top:12px;line-height:1.6;">That's the honest starting line — a young, small shop putting its money where its story is. We'll share who we're working with and what it funded as soon as it's real, not before.</p>
- </div>
- <div style="flex-shrink:0;">
- <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1"><circle cx="12" cy="12" r="10.5" fill="rgba(255,255,255,0.04)"></circle><circle cx="12" cy="12" r="3.4" fill="var(--accent)" stroke="none"></circle><circle cx="12" cy="12" r="0.9" fill="var(--ink)" stroke="none"></circle></svg>
- </div>
- </div>
-
- <!-- CHARITY CRATE -->
- <div id="charity-crate" style="padding:96px 64px;">
- <div style="max-width:640px;margin-bottom:48px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">Shop &amp; Give</span>
- <h2 style="font-size:34px;margin-top:12px;">The Little Legends Charity Crate</h2>
- <p style="font-size:16px;color:var(--ink-soft);margin-top:12px;line-height:1.6;">Same crate you'd build yourself — apparel, a rattle, a teether, a board book — with a bigger share of every sale going straight to the fund.</p>
- </div>
- <div class="crate-card" style="background:var(--bg-card);border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-wrap:wrap;max-width:760px;">
- <div class="crate-band" style="flex:1;min-width:260px;min-height:260px;background:linear-gradient(0deg, rgba(10,10,10,0.55), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/17761321/pexels-photo-17761321.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;"></div>
- <div style="flex:1;min-width:260px;padding:32px;display:flex;flex-direction:column;gap:14px;">
- <span class="p-badge" style="position:static;display:inline-block;width:fit-content;">$8 Gives Back</span>
- <div style="font-size:20px;font-weight:600;">Little Legends Charity Crate</div>
- <div style="font-size:15px;color:var(--ink-soft);line-height:1.6;">Graphic tee, mini boombox rattle, cassette teether &amp; a music-history board book — $8 of every one sold goes into the fund.</div>
- <div style="font-size:22px;font-weight:700;margin-top:4px;">$58</div>
- <a href="gift-crates.html" class="cta-btn" style="margin-top:8px;align-self:flex-start;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:2px;font-size:15px;font-weight:700;">Shop This Crate</a>
- </div>
- </div>
- </div>
-
- <!-- FOOTER -->
- <div class="site-footer-links"><div>© 2026 Coley Kids. All rights reserved.</div></div>
-
-</div><script src="motion.js" defer></script>
+<div class="scrim"></div>
+<aside class="drawer" aria-hidden="true" aria-label="Your bag">
+  <div class="drawer-head"><h2>Your Bag</h2><button class="icon-btn" type="button" data-close-bag aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot">
+    <div class="tot"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn-red" type="button" disabled style="opacity:.55;cursor:not-allowed">Checkout opens at launch</button>
+    <small>Preview store — no payments are taken yet.</small>
+  </div>
+</aside>
+<div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product quick view">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close quick view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal-media"></div>
+    <div class="modal-body">
+      <p class="p-cat"></p>
+      <h2></h2>
+      <p class="mp"></p>
+      <p class="md"></p>
+      <div class="modal-sizes"><p class="opt-label">Size</p><div class="opts"><button type="button" class="opt">0–3M</button><button type="button" class="opt">3–6M</button><button type="button" class="opt">6M</button><button type="button" class="opt">12M</button><button type="button" class="opt">18M</button><button type="button" class="opt">2T</button><button type="button" class="opt">3T</button><button type="button" class="opt">4T</button><button type="button" class="opt">5T</button></div></div>
+      <button class="btn btn-ink" type="button" data-modal-add style="justify-content:center">Add to bag <span class="arrow">→</span></button>
+      <p class="b-note" style="margin:0">Sample pricing — final prices at launch.</p>
+    </div>
+  </div>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
+<script src="site.js" defer></script>
 </body>
 </html>

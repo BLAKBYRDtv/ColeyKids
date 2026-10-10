@@ -2,196 +2,118 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coley Kids — Gift Crates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gift Crates — Coley Kids</title>
+<meta name="description" content="Build a music-themed gift crate: pick a sound, pick a size, and Coley Kids packs it by hand.">
+<meta name="theme-color" content="#141010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__coley)document.documentElement.classList.remove('js')},3000);</script>
 </head>
-<body>
-<div class="site">
+<body class="crates">
+<div class="curtain" aria-hidden="true"><span class="logo">Coley <em>Kids</em></span></div>
+<div class="announce" aria-label="Store news"><div class="announce-track"><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span></div></div>
+<header class="site-header">
+  <button class="icon-btn menu-btn" type="button" data-menu-open aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  <a class="logo" href="index.html" aria-label="Coley Kids home">Coley <em>Kids</em></a>
+  <nav class="nav" aria-label="Main"><a class="nav-link" href="shop.html"><span data-text="Shop">Shop</span></a><a class="nav-link active" href="gift-crates.html"><span data-text="Gift Crates">Gift Crates</span></a><a class="nav-link" href="giving-back.html"><span data-text="Give Back">Give Back</span></a><a class="nav-link" href="about.html"><span data-text="About">About</span></a></nav>
+  <div class="header-actions">
+    <a class="icon-btn" href="shop.html" aria-label="Search the shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></a>
+    <button class="icon-btn" type="button" data-open-bag aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 8h14l-1.2 12.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="bag-count">0</span></button>
+  </div>
+</header>
+<div class="menu-overlay" aria-hidden="true">
+  <button class="icon-btn close" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul class="menu-links"><li><a href="index.html"><span>Home</span></a></li><li><a href="shop.html"><span>Shop</span></a></li><li><a href="gift-crates.html"><span>Gift Crates</span></a></li><li><a href="giving-back.html"><span>Give Back</span></a></li><li><a href="about.html"><span>About</span></a></li></ul>
+  <p class="menu-foot">Raised on the classics.</p>
+</div>
 
- <!-- HEADER -->
- <div class="site-header">
- <a href="index.html" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:28px;color:var(--ink);">Coley <span style="color:var(--accent-dark);">Kids</span></a>
- <div style="display:flex;gap:40px;align-items:center;">
- <a href="shop.html" class="nav-link">Shop</a>
- <a href="gift-crates.html" class="nav-link active">Gift Crates</a>
- <a href="giving-back.html" class="nav-link">Give Back</a>
- <a href="about.html" class="nav-link">About</a>
- </div>
- <div style="display:flex;gap:22px;align-items:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
- </div>
- </div>
+<main>
+  <section class="split-hero">
+    <div class="sh-copy">
+      <span class="eyebrow" style="color:var(--red-hot)" data-reveal>Gift Crates</span>
+      <h1 data-lines><span class="ln"><span>Build Your</span></span><span class="ln"><span><em>Crate.</em></span></span></h1>
+      <p class="lede" data-reveal style="--d:150ms">Pick a sound. Pick a size. We hand-pick the pieces, wrap it up and ship it gift-ready — the way the very first Coley crate was made.</p>
+      <div data-reveal style="--d:250ms"><a class="btn btn-red" href="#builder">Start building <span class="arrow">↓</span></a></div>
+    </div>
+    <div class="sh-media"><img src="img/hero-4.jpg" alt="Girl in a leather jacket holding a keyboard against a yellow wall" data-reveal="clip" width="1200" height="1600"></div>
+  </section>
+  <section class="marquee ink" aria-label="How crates work">
+  <p class="sr-only">Pick A Sound · Pick A Size · Packed By Hand · Ready To Gift · Raised On The Classics · Boom Bap Before Bedtime · Rock The Cradle · Boots Up, Hats On</p>
+  <div class="marquee-row " aria-hidden="true"><span>Pick A Sound<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Pick A Size<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Packed By Hand<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Ready To Gift<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Pick A Sound<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Pick A Size<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Packed By Hand<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Ready To Gift<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span></div>
+  <div class="marquee-row rev outline" aria-hidden="true"><span>Raised On The Classics<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Boom Bap Before Bedtime<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Rock The Cradle<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Boots Up, Hats On<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Raised On The Classics<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Boom Bap Before Bedtime<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Rock The Cradle<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Boots Up, Hats On<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span></div>
+</section>
+  <section class="section" id="builder" style="scroll-margin-top:100px">
+    <div class="builder">
+      <div>
+        <div class="b-step" data-reveal>
+          <div class="b-step-h"><span>01</span><h2>Choose A Sound</h2></div>
+          <div class="themes"><button type="button" class="theme" data-theme="hiphop" aria-pressed="false"><img src="img/crate-hiphop.jpg" alt="Black boy in a backwards cap flexing" loading="lazy"><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span><b>Old School Hip Hop</b></button><button type="button" class="theme" data-theme="rock" aria-pressed="false"><img src="img/crate-rock.jpg" alt="Kid playing electric guitar" loading="lazy"><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span><b>Rock N&#x27; Roll</b></button><button type="button" class="theme" data-theme="country" aria-pressed="false"><img src="img/crate-country.jpg" alt="Boy in a straw hat smiling" loading="lazy"><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span><b>Country</b></button><button type="button" class="theme" disabled aria-disabled="true"><img src="img/p-cassettes.jpg" alt="" loading="lazy"><b>More Sounds<small>Coming soon</small></b></button></div>
+        </div>
+        <div class="b-step" data-reveal>
+          <div class="b-step-h"><span>02</span><h2>Choose A Size</h2></div>
+          <div class="sizes"><button type="button" class="size" data-size="3" aria-pressed="false"><b>3</b><span>Starter Crate</span><small>3 hand-picked pieces — a sweet little hello</small><em>$38</em></button><button type="button" class="size" data-size="5" aria-pressed="false"><span class=flag>Our Pick</span><b>5</b><span>Classic Crate</span><small>5 hand-picked pieces — the sweet spot</small><em>$58</em></button><button type="button" class="size" data-size="7" aria-pressed="false"><b>7</b><span>Deluxe Crate</span><small>7 hand-picked pieces — the full collection</small><em>$82</em></button></div>
+          <p class="b-note">Sample pricing shown — final pricing coming at launch.</p>
+        </div>
+        <div class="b-step" data-reveal>
+          <div class="b-step-h"><span>03</span><h2>We Do The Rest</h2></div>
+          <p class="lede">Every crate gets tissue wrap, a gift note and our signature box. Exact pieces can vary with size and availability — we'll always swap like for like.</p>
+        </div>
+      </div>
+      <aside class="preview" aria-live="polite" aria-label="Your crate">
+        <div class="preview-top"><div><p class="tag">Your crate</p><h3 data-pv-theme>Old School Hip Hop</h3><p style="color:oklch(98% 0.006 85 / .7);font-size:14px;margin-top:6px" data-pv-size></p></div></div>
+        <div class="crate-box"><div class="crate-items"></div></div>
+        <ul class="preview-list"></ul>
+        <div class="preview-total"><div><small>Crate price</small><br><b data-pv-total>$58</b></div><small>Gift wrap + gift note included</small></div>
+        <button type="button" class="btn btn-red" data-add-crate>Add crate to bag <span class="arrow">→</span></button>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <h3>Stay in<br>the loop.</h3>
+      <form class="news" novalidate><label class="sr-only" for="newsEmail">Email</label><input id="newsEmail" type="email" placeholder="Your email for new drops"><button type="submit">Join →</button></form>
+      <p class="news-note" aria-live="polite"></p>
+    </div>
+    <div><h4>Shop</h4><ul><li><a href="shop.html#apparel">Apparel</a></li><li><a href="shop.html#accessories">Accessories</a></li><li><a href="shop.html#toys">Toys</a></li><li><a href="shop.html#gifts">Gifts</a></li></ul></div>
+    <div><h4>Crates</h4><ul><li><a href="gift-crates.html#hiphop">Old School Hip Hop</a></li><li><a href="gift-crates.html#rock">Rock N' Roll</a></li><li><a href="gift-crates.html#country">Country</a></li><li><a href="gift-crates.html">Build Your Own</a></li></ul></div>
+    <div><h4>Coley Kids</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="giving-back.html">Little Legends Fund</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+  </div>
+  <div class="wordmark" aria-hidden="true">Coley Kids</div>
+  <div class="foot-base"><span>© 2026 Coley Kids. All rights reserved.</span><span>Hip hop is culture. Raise them on it.</span></div>
+</footer>
 
- <!-- TITLE -->
- <div style="padding:64px 64px 32px;max-width:720px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">Gift Crates</span>
- <h1 style="font-size:44px;margin-top:12px;">Build Your Gift Crate</h1>
- <p style="margin-top:12px;color:var(--ink-soft);font-size:16px;line-height:1.6;">Three steps: pick a sound, pick a size, and let us curate the rest from apparel, accessories, toys and gifts.</p>
- </div>
-
- <!-- STEP 1: THEME -->
- <div style="padding:0 64px 64px;">
- <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:20px;">Step 1 — Choose a Theme</div>
- <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:20px;">
-
- <div style="position:relative;border:2px solid var(--hiphop);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:oklch(92% 0.03 25);">
- <div style="position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;background:var(--hiphop);display:flex;align-items:center;justify-content:center;">
- <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M4 12l5 5L20 6"></path></svg>
- </div>
- <div style="width:44px;height:44px;border-radius:50%;background:var(--hiphop);display:flex;align-items:center;justify-content:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle></svg>
- </div>
- <div style="font-size:16px;font-weight:600;">Old School Hip Hop</div>
- </div>
-
- <div style="border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:var(--bg-card);">
- <div style="width:44px;height:44px;border-radius:50%;background:oklch(92% 0.02 265);display:flex;align-items:center;justify-content:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--rock)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-2 2-1-1-2 2a4 4 0 1 1-4-4l2-2-1-1 2-2z"></path><circle cx="9" cy="15" r="3.2"></circle></svg>
- </div>
- <div style="font-size:16px;font-weight:600;">Rock N' Roll</div>
- </div>
-
- <div style="border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:var(--bg-card);">
- <div style="width:44px;height:44px;border-radius:50%;background:oklch(93% 0.012 145);display:flex;align-items:center;justify-content:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--country)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c0-1 3-2 8-2s8 1 8 2-3 2-8 2-8-1-8-2z"></path><path d="M8 13c0-4 2-8 4-8s4 4 4 8"></path></svg>
- </div>
- <div style="font-size:16px;font-weight:600;">Country</div>
- </div>
-
- <div style="border:2px dashed var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center;color:var(--ink-soft);">
- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
- <div style="font-size:15px;font-weight:500;">More themes coming</div>
- </div>
-
- </div>
- </div>
-
- <!-- STEP 2: SIZE -->
- <div style="padding:64px;background:oklch(95% 0.01 30);">
- <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:20px;">Step 2 — Choose Your Size</div>
- <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:24px;">
-
- <div style="background:var(--bg-card);border:1px solid var(--line);border-radius:6px;padding:32px;display:flex;flex-direction:column;gap:14px;">
- <div style="font-family:'Instrument Serif',Georgia,serif;font-size:40px;">3</div>
- <div style="font-size:16px;font-weight:600;">Starter Crate</div>
- <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">1 apparel · 1 toy · 1 gift</div>
- <div style="font-size:18px;font-weight:600;margin-top:8px;">$38</div>
- <button style="margin-top:8px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:12px;font-weight:600;font-size:14px;border-radius:2px;">Select</button>
- </div>
-
- <div style="position:relative;background:var(--bg-card);border:2px solid var(--accent-dark);border-radius:6px;padding:32px;display:flex;flex-direction:column;gap:14px;">
- <div style="position:absolute;top:-13px;left:32px;background:var(--accent-dark);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 10px;border-radius:2px;">Most Popular</div>
- <div style="font-family:'Instrument Serif',Georgia,serif;font-size:40px;">5</div>
- <div style="font-size:16px;font-weight:600;">Classic Crate</div>
- <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">2 apparel · 1 accessory · 1 toy · 1 gift</div>
- <div style="font-size:18px;font-weight:600;margin-top:8px;">$58</div>
- <button style="margin-top:8px;background:var(--accent);color:var(--accent-ink);padding:12px;font-weight:600;font-size:14px;border-radius:2px;">Select</button>
- </div>
-
- <div style="background:var(--bg-card);border:1px solid var(--line);border-radius:6px;padding:32px;display:flex;flex-direction:column;gap:14px;">
- <div style="font-family:'Instrument Serif',Georgia,serif;font-size:40px;">7</div>
- <div style="font-size:16px;font-weight:600;">Deluxe Crate</div>
- <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">2 apparel · 2 accessories · 2 toys · 1 gift</div>
- <div style="font-size:18px;font-weight:600;margin-top:8px;">$82</div>
- <button style="margin-top:8px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:12px;font-weight:600;font-size:14px;border-radius:2px;">Select</button>
- </div>
-
- </div>
- <div style="font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:16px;">Sample pricing shown — final pricing TBD.</div>
- </div>
-
- <!-- STEP 3: PREVIEW -->
- <div style="padding:64px;">
- <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:8px;">Step 3 — Here's What's Inside</div>
- <div style="font-size:20px;margin-bottom:28px;font-family:'Instrument Serif',Georgia,serif;">Every Old School Hip Hop Classic Crate includes a mix like this:</div>
- <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:20px;">
-
- <div style="display:flex;flex-direction:column;gap:14px;">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.72), rgba(10,10,10,0.3) 55%), url('https://images.pexels.com/photos/20571056/pexels-photo-20571056.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <div style="position:relative;z-index:2;text-align:center;padding:0 8px;font-family:'Bebas Neue',Impact,sans-serif;color:white;line-height:1.05;text-shadow:0 2px 6px rgba(0,0,0,0.5);">
- <div style="font-size:9px;letter-spacing:0.16em;opacity:0.8;">EST. OLD SCHOOL</div>
- <div style="font-size:17px;">RAISED ON<br>THE CLASSICS</div>
- </div>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Apparel</div>
- <div style="font-size:15px;font-weight:600;">Graphic Tee Onesie</div>
- <div style="font-size:14px;color:var(--ink-soft);">$24</div>
- </div>
-
- <div style="display:flex;flex-direction:column;gap:14px;">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/28775658/pexels-photo-28775658.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M20 10a4 4 0 0 1 8 0" stroke-width="1.6"></path>
- <rect x="8" y="14" width="32" height="22" rx="5" fill="rgba(255,255,255,0.18)"></rect>
- <circle cx="18" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
- <circle cx="30" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
- <rect x="20" y="17" width="8" height="4" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Accessories</div>
- <div style="font-size:15px;font-weight:600;">Cassette-Tape Teether</div>
- <div style="font-size:14px;color:var(--ink-soft);">$14</div>
- </div>
-
- <div style="display:flex;flex-direction:column;gap:14px;">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/7833961/pexels-photo-7833961.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M14 12V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke-width="1.4"></path>
- <path d="M10 16a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v14H10z" fill="rgba(255,255,255,0.18)"></path>
- <circle cx="17" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
- <circle cx="31" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
- <circle cx="12" cy="34" r="3"></circle>
- <circle cx="36" cy="34" r="3"></circle>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Toys</div>
- <div style="font-size:15px;font-weight:600;">Wooden Boombox Push Toy</div>
- <div style="font-size:14px;color:var(--ink-soft);">$28</div>
- </div>
-
- <div style="display:flex;flex-direction:column;gap:14px;">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/3661368/pexels-photo-3661368.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
- <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
- <circle cx="24" cy="16" r="4" stroke-width="1.4"></circle>
- <line x1="24" y1="20" x2="24" y2="27" stroke-width="1.4"></line>
- <path d="M19 22a5 5 0 0 0 10 0" stroke-width="1.3"></path>
- <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Gifts</div>
- <div style="font-size:15px;font-weight:600;">LPBD: Tupac Shakur</div>
- <div style="font-size:14px;color:var(--ink-soft);">$15</div>
- </div>
-
- </div>
- <div style="font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:24px;">Exact items vary by size and availability.</div>
- </div>
-
- <!-- CTA SUMMARY BAR -->
- <div style="margin:0 64px 64px;background:var(--ink);color:var(--bg);border-radius:6px;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
- <div style="font-size:15px;font-weight:500;">Old School Hip Hop · Classic Crate (5 items) · $58</div>
- <button style="background:var(--accent);color:var(--accent-ink);padding:14px 28px;border-radius:2px;font-size:15px;font-weight:600;">Add Crate to Cart</button>
- </div>
-
- <!-- FOOTER -->
- <div class="site-footer-links">
- <div>© 2026 Coley Kids</div>
- <div style="display:flex;gap:24px;">
- <a href="shop.html" style="color:var(--ink-soft);">Shop</a>
- <a href="gift-crates.html" style="color:var(--ink-soft);">Gift Crates</a>
- <a href="about.html" style="color:var(--ink-soft);">About</a>
- </div>
- </div>
-
-</div><script src="motion.js" defer></script>
+<div class="scrim"></div>
+<aside class="drawer" aria-hidden="true" aria-label="Your bag">
+  <div class="drawer-head"><h2>Your Bag</h2><button class="icon-btn" type="button" data-close-bag aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot">
+    <div class="tot"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn-red" type="button" disabled style="opacity:.55;cursor:not-allowed">Checkout opens at launch</button>
+    <small>Preview store — no payments are taken yet.</small>
+  </div>
+</aside>
+<div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product quick view">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close quick view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal-media"></div>
+    <div class="modal-body">
+      <p class="p-cat"></p>
+      <h2></h2>
+      <p class="mp"></p>
+      <p class="md"></p>
+      <div class="modal-sizes"><p class="opt-label">Size</p><div class="opts"><button type="button" class="opt">0–3M</button><button type="button" class="opt">3–6M</button><button type="button" class="opt">6M</button><button type="button" class="opt">12M</button><button type="button" class="opt">18M</button><button type="button" class="opt">2T</button><button type="button" class="opt">3T</button><button type="button" class="opt">4T</button><button type="button" class="opt">5T</button></div></div>
+      <button class="btn btn-ink" type="button" data-modal-add style="justify-content:center">Add to bag <span class="arrow">→</span></button>
+      <p class="b-note" style="margin:0">Sample pricing — final prices at launch.</p>
+    </div>
+  </div>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
+<script src="site.js" defer></script>
 </body>
 </html>

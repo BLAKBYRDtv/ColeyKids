@@ -2,271 +2,190 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coley Kids — Shop À La Carte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shop — Coley Kids</title>
+<meta name="description" content="Shop music-inspired kids apparel, accessories, toys and gifts from Coley Kids.">
+<meta name="theme-color" content="#141010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__coley)document.documentElement.classList.remove('js')},3000);</script>
 </head>
-<body>
-<div class="site">
+<body class="shop">
+<div class="curtain" aria-hidden="true"><span class="logo">Coley <em>Kids</em></span></div>
+<div class="announce" aria-label="Store news"><div class="announce-track"><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span><span>Every crate ships gift-ready</span><span>Sized newborn to 5T</span><span>The Little Legends Fund is coming — music for every kid</span><span>Crates packed by hand</span></div></div>
+<header class="site-header">
+  <button class="icon-btn menu-btn" type="button" data-menu-open aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+  <a class="logo" href="index.html" aria-label="Coley Kids home">Coley <em>Kids</em></a>
+  <nav class="nav" aria-label="Main"><a class="nav-link active" href="shop.html"><span data-text="Shop">Shop</span></a><a class="nav-link" href="gift-crates.html"><span data-text="Gift Crates">Gift Crates</span></a><a class="nav-link" href="giving-back.html"><span data-text="Give Back">Give Back</span></a><a class="nav-link" href="about.html"><span data-text="About">About</span></a></nav>
+  <div class="header-actions">
+    <a class="icon-btn" href="shop.html" aria-label="Search the shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></a>
+    <button class="icon-btn" type="button" data-open-bag aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 8h14l-1.2 12.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="bag-count">0</span></button>
+  </div>
+</header>
+<div class="menu-overlay" aria-hidden="true">
+  <button class="icon-btn close" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul class="menu-links"><li><a href="index.html"><span>Home</span></a></li><li><a href="shop.html"><span>Shop</span></a></li><li><a href="gift-crates.html"><span>Gift Crates</span></a></li><li><a href="giving-back.html"><span>Give Back</span></a></li><li><a href="about.html"><span>About</span></a></li></ul>
+  <p class="menu-foot">Raised on the classics.</p>
+</div>
 
- <!-- HEADER -->
- <div class="site-header">
- <a href="index.html" style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:28px;color:var(--ink);">Coley <span style="color:var(--accent-dark);">Kids</span></a>
- <div style="display:flex;gap:40px;align-items:center;">
- <a href="shop.html" class="nav-link active">Shop</a>
- <a href="gift-crates.html" class="nav-link">Gift Crates</a>
- <a href="giving-back.html" class="nav-link">Give Back</a>
- <a href="about.html" class="nav-link">About</a>
- </div>
- <div style="display:flex;gap:22px;align-items:center;">
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
- </div>
- </div>
+<main>
+  <section class="page-hero">
+    <span class="eyebrow" data-reveal>À La Carte</span>
+    <h1 data-lines><span class="ln"><span>The Shop</span></span><span class="ln"><span><span class="outline">Fresh Drops</span></span></span></h1>
+    <p class="lede" data-reveal style="--d:150ms">Everything we put in a crate, sold on its own. Hover or tap any piece for a closer look — add it straight to your bag.</p>
+    <p class="b-note" data-reveal style="--d:220ms;margin:0">Preview store: product photos and prices are samples until launch.</p>
+  </section>
+  <section class="marquee ink" aria-label="Shop highlights">
+  <p class="sr-only">Fresh Since Day One · Sized Newborn To 5T · Ships Gift-Ready · Raised On The Classics · Old School. New Kid. · Hip Hop Is Culture · Wu-Tang Is For The Kids · Lil&#x27; Legends Only</p>
+  <div class="marquee-row " aria-hidden="true"><span>Fresh Since Day One<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Sized Newborn To 5T<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Ships Gift-Ready<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Raised On The Classics<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Fresh Since Day One<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Sized Newborn To 5T<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Ships Gift-Ready<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Raised On The Classics<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span></div>
+  <div class="marquee-row rev outline" aria-hidden="true"><span>Old School. New Kid.<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Hip Hop Is Culture<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Wu-Tang Is For The Kids<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Lil&#x27; Legends Only<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Old School. New Kid.<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Hip Hop Is Culture<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Wu-Tang Is For The Kids<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span><span>Lil&#x27; Legends Only<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.6 7.4 7.9.2-6.3 4.8 2.3 7.6L12 17l-6.5 4.5 2.3-7.6L1.5 9.1l7.9-.2z"/></svg></span></div>
+</section>
+  <div class="shop-bar">
+    <div class="filters" role="group" aria-label="Filter by category"><button type="button" class="filter is-on" data-filter="all" aria-pressed="true">All<sup>16</sup></button><button type="button" class="filter" data-filter="apparel" aria-pressed="false">Apparel<sup>5</sup></button><button type="button" class="filter" data-filter="accessories" aria-pressed="false">Accessories<sup>3</sup></button><button type="button" class="filter" data-filter="toys" aria-pressed="false">Toys<sup>4</sup></button><button type="button" class="filter" data-filter="gifts" aria-pressed="false">Gifts<sup>4</sup></button></div>
+    <div class="sort"><span data-count>16 pieces</span><label class="sr-only" for="sortSel">Sort</label><select id="sortSel"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+  </div>
+  <section class="shop-grid" aria-label="Products"><article class="p-card" data-id="tee" data-cat="apparel" data-price="24" data-order="0" data-reveal style="--d:0ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-tee.jpg" alt="Boy in a black “Cool Kids” graphic tee and olive shorts" loading="lazy" width="600" height="600"><span class="p-badge new">New</span>
+    <div class="p-actions"><button type="button" class="p-add" data-add="tee" aria-label="Quick add Cool Kids Graphic Tee to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Cool Kids Graphic Tee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Apparel</p><h3 class="p-name">Cool Kids Graphic Tee</h3></div><p class="p-price">$24</p></div>
+</article><article class="p-card" data-id="varsity" data-cat="apparel" data-price="48" data-order="1" data-reveal style="--d:70ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-varsity.jpg" alt="Kids sweatsuit sets with varsity stripe trim laid flat" loading="lazy" width="600" height="600"><span class="p-badge new">New</span>
+    <div class="p-actions"><button type="button" class="p-add" data-add="varsity" aria-label="Quick add Lil&#x27; Varsity Sweatsuit Set to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Lil&#x27; Varsity Sweatsuit Set"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Apparel</p><h3 class="p-name">Lil&#x27; Varsity Sweatsuit Set</h3></div><p class="p-price">$48</p></div>
+</article><article class="p-card" data-id="track" data-cat="apparel" data-price="52" data-order="2" data-reveal style="--d:140ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-tracksuit.jpg" alt="Girl in a red and white track set" loading="lazy" width="600" height="600"><span class="p-stamp"><small>Est. Old School</small><b>Raised On The Classics</b></span>
+    <div class="p-actions"><button type="button" class="p-add" data-add="track" aria-label="Quick add Old School Track Set to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Old School Track Set"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Apparel</p><h3 class="p-name">Old School Track Set</h3></div><p class="p-price">$52</p></div>
+</article><article class="p-card" data-id="overalls" data-cat="apparel" data-price="42" data-order="3" data-reveal style="--d:210ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-overalls.jpg" alt="Toddler in a pink beanie, striped tee and denim overalls" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="overalls" aria-label="Quick add Denim Overall Set to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Denim Overall Set"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Apparel</p><h3 class="p-name">Denim Overall Set</h3></div><p class="p-price">$42</p></div>
+</article><a class="shop-feature" href="gift-crates.html" data-reveal data-cursor="Build"><img src="img/hero-4.jpg" alt="Girl in a leather jacket holding a keyboard against a yellow wall" loading="lazy"><div><span class="eyebrow" style="color:var(--red-hot)">Gift Crates</span><h3>Raised On<br>The Classics.</h3><span class="link-u" style="color:var(--cream)">Build a crate →</span></div></a><article class="p-card" data-id="moto" data-cat="apparel" data-price="58" data-order="4" data-reveal style="--d:0ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-rockstar.jpg" alt="Toddler in a black moto jacket and aviator shades" loading="lazy" width="600" height="600"><span class="p-badge new">New</span>
+    <div class="p-actions"><button type="button" class="p-add" data-add="moto" aria-label="Quick add Rockstar Moto Jacket to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Rockstar Moto Jacket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Apparel</p><h3 class="p-name">Rockstar Moto Jacket</h3></div><p class="p-price">$58</p></div>
+</article><article class="p-card" data-id="shades" data-cat="accessories" data-price="16" data-order="5" data-reveal style="--d:70ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-shades.jpg" alt="Smiling baby wearing white sunglasses" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="shades" aria-label="Quick add Baby Shades to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Baby Shades"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Accessories</p><h3 class="p-name">Baby Shades</h3></div><p class="p-price">$16</p></div>
+</article><article class="p-card" data-id="headphones" data-cat="accessories" data-price="28" data-order="6" data-reveal style="--d:140ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-headphones.jpg" alt="Brown and black headphones on a white surface" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="headphones" aria-label="Quick add Mini Headphones to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Mini Headphones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Accessories</p><h3 class="p-name">Mini Headphones</h3></div><p class="p-price">$28</p></div>
+</article><article class="p-card" data-id="sneakers" data-cat="accessories" data-price="34" data-order="7" data-reveal style="--d:210ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-sneakers.jpg" alt="Tiny black glitter high-top sneakers" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="sneakers" aria-label="Quick add Glitter High-Tops to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Glitter High-Tops"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Accessories</p><h3 class="p-name">Glitter High-Tops</h3></div><p class="p-price">$34</p></div>
+</article><article class="p-card" data-id="cassette" data-cat="toys" data-price="14" data-order="8" data-reveal style="--d:0ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-cassette.jpg" alt="Clear cassette tapes on a white surface" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="cassette" aria-label="Quick add Cassette-Tape Teether to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Cassette-Tape Teether"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Toys</p><h3 class="p-name">Cassette-Tape Teether</h3></div><p class="p-price">$14</p></div>
+</article><article class="p-card" data-id="boombox" data-cat="toys" data-price="22" data-order="9" data-reveal style="--d:70ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-boombox.jpg" alt="Hand carrying a silver boombox" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="boombox" aria-label="Quick add Mini Boombox Rattle to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Mini Boombox Rattle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Toys</p><h3 class="p-name">Mini Boombox Rattle</h3></div><p class="p-price">$22</p></div>
+</article><article class="p-card" data-id="cassettes" data-cat="toys" data-price="26" data-order="10" data-reveal style="--d:140ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-cassettes.jpg" alt="Wall of colorful vintage cassette tapes" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="cassettes" aria-label="Quick add Plush Cassette Buddy to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Plush Cassette Buddy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Toys</p><h3 class="p-name">Plush Cassette Buddy</h3></div><p class="p-price">$26</p></div>
+</article><article class="p-card" data-id="cowboy" data-cat="toys" data-price="18" data-order="11" data-reveal style="--d:210ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/p-cowboy.jpg" alt="Baby in a white cowboy hat and white shirt" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="cowboy" aria-label="Quick add Cowboy Hat Rattle to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Cowboy Hat Rattle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Toys</p><h3 class="p-name">Cowboy Hat Rattle</h3></div><p class="p-price">$18</p></div>
+</article><article class="p-card" data-id="book-hiphop" data-cat="gifts" data-price="15" data-order="12" data-reveal style="--d:0ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <div class="book b-red" style="position:absolute;inset:0"><span class="bk-top">Board Book · Coley Kids</span><span class="bk-name">Hip Hop Legends</span><span class="bk-disc"></span></div>
+    <div class="p-actions"><button type="button" class="p-add" data-add="book-hiphop" aria-label="Quick add Music Legends Board Book: Hip Hop to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Music Legends Board Book: Hip Hop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Gifts</p><h3 class="p-name">Music Legends Board Book: Hip Hop</h3></div><p class="p-price">$15</p></div>
+</article><article class="p-card" data-id="book-rock" data-cat="gifts" data-price="15" data-order="13" data-reveal style="--d:70ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <div class="book b-ink" style="position:absolute;inset:0"><span class="bk-top">Board Book · Coley Kids</span><span class="bk-name">Rock Legends</span><span class="bk-disc"></span></div>
+    <div class="p-actions"><button type="button" class="p-add" data-add="book-rock" aria-label="Quick add Music Legends Board Book: Rock to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Music Legends Board Book: Rock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Gifts</p><h3 class="p-name">Music Legends Board Book: Rock</h3></div><p class="p-price">$15</p></div>
+</article><article class="p-card" data-id="book-country" data-cat="gifts" data-price="15" data-order="14" data-reveal style="--d:140ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <div class="book b-sage" style="position:absolute;inset:0"><span class="bk-top">Board Book · Coley Kids</span><span class="bk-name">Country Legends</span><span class="bk-disc"></span></div>
+    <div class="p-actions"><button type="button" class="p-add" data-add="book-country" aria-label="Quick add Music Legends Board Book: Country to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Music Legends Board Book: Country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Gifts</p><h3 class="p-name">Music Legends Board Book: Country</h3></div><p class="p-price">$15</p></div>
+</article><article class="p-card" data-id="giftbox" data-cat="gifts" data-price="10" data-order="15" data-reveal style="--d:210ms">
+  <div class="p-media" data-quickview data-cursor="View">
+    <img src="img/crate-build.jpg" alt="Kraft gift box tied with white cord" loading="lazy" width="600" height="600">
+    <div class="p-actions"><button type="button" class="p-add" data-add="giftbox" aria-label="Quick add Signature Gift Box to bag">Quick Add +</button><button type="button" class="p-view" data-quickview aria-label="Quick view Signature Gift Box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+  </div>
+  <div class="p-info"><div><p class="p-cat">Gifts</p><h3 class="p-name">Signature Gift Box</h3></div><p class="p-price">$10</p></div>
+</article></section>
+</main>
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <h3>Stay in<br>the loop.</h3>
+      <form class="news" novalidate><label class="sr-only" for="newsEmail">Email</label><input id="newsEmail" type="email" placeholder="Your email for new drops"><button type="submit">Join →</button></form>
+      <p class="news-note" aria-live="polite"></p>
+    </div>
+    <div><h4>Shop</h4><ul><li><a href="shop.html#apparel">Apparel</a></li><li><a href="shop.html#accessories">Accessories</a></li><li><a href="shop.html#toys">Toys</a></li><li><a href="shop.html#gifts">Gifts</a></li></ul></div>
+    <div><h4>Crates</h4><ul><li><a href="gift-crates.html#hiphop">Old School Hip Hop</a></li><li><a href="gift-crates.html#rock">Rock N' Roll</a></li><li><a href="gift-crates.html#country">Country</a></li><li><a href="gift-crates.html">Build Your Own</a></li></ul></div>
+    <div><h4>Coley Kids</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="giving-back.html">Little Legends Fund</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+  </div>
+  <div class="wordmark" aria-hidden="true">Coley Kids</div>
+  <div class="foot-base"><span>© 2026 Coley Kids. All rights reserved.</span><span>Hip hop is culture. Raise them on it.</span></div>
+</footer>
 
- <!-- TITLE + FILTERS -->
- <div style="padding:64px 64px 40px;">
- <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;">À La Carte</span>
- <h1 style="font-size:44px;margin-top:12px;">Shop À La Carte</h1>
- <p style="margin-top:12px;color:var(--ink-soft);font-size:16px;">Every item from our gift crates, available on its own.</p>
- <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
- <button style="background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:600;">All</button>
- <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Apparel</button>
- <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Accessories</button>
- <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Toys</button>
- <button style="background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 20px;border-radius:20px;font-size:14px;font-weight:500;">Gifts</button>
- </div>
- </div>
-
- <!-- PRODUCT GRID -->
- <div class="grid-4" style="padding:0 64px 96px;display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:32px 28px;">
-
- <div class="p-card">
- <span class="p-badge">Best Seller</span>
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.72), rgba(10,10,10,0.3) 55%), url('https://images.pexels.com/photos/20571056/pexels-photo-20571056.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <div style="position:relative;z-index:2;text-align:center;padding:0 10px;font-family:'Bebas Neue',Impact,sans-serif;color:white;line-height:1.05;text-shadow:0 2px 6px rgba(0,0,0,0.5);">
- <div style="font-size:11px;letter-spacing:0.18em;opacity:0.8;">EST. OLD SCHOOL</div>
- <div style="font-size:22px;">RAISED ON<br>THE CLASSICS</div>
- </div>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Apparel</div>
- <div class="p-name">Graphic Tee Onesie</div>
- <div class="p-price">$24</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.72), rgba(10,10,10,0.3) 55%), url('https://images.pexels.com/photos/27177703/pexels-photo-27177703.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <div style="position:relative;z-index:2;text-align:center;padding:0 10px;font-family:'Bebas Neue',Impact,sans-serif;color:white;line-height:1.05;text-shadow:0 2px 6px rgba(0,0,0,0.5);">
- <div style="font-size:11px;letter-spacing:0.18em;opacity:0.8;">SINCE DAY ONE</div>
- <div style="font-size:22px;">OLD SCHOOL<br>FIT</div>
- </div>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Apparel</div>
- <div class="p-name">Denim Overall Set</div>
- <div class="p-price">$42</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/9305088/pexels-photo-9305088.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M24 10c-6 0-11 2-11 2v6c0 10 4 18 11 18s11-8 11-18v-6s-5-2-11-2z" fill="rgba(255,255,255,0.18)"></path>
- <path d="M24 10v-3" stroke-width="1.6"></path>
- <circle cx="24" cy="6" r="1.6" fill="white" stroke="none"></circle>
- <path d="M27 20l-4 7h3l-2 6 6-9h-3z" stroke-width="1.3" stroke-linejoin="round"></path>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Accessories</div>
- <div class="p-name">Rockstar Bib</div>
- <div class="p-price">$16</div>
- </div>
-
- <div class="p-card">
- <span class="p-badge">Best Seller</span>
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/28775658/pexels-photo-28775658.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M20 10a4 4 0 0 1 8 0" stroke-width="1.6"></path>
- <rect x="8" y="14" width="32" height="22" rx="5" fill="rgba(255,255,255,0.18)"></rect>
- <circle cx="18" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
- <circle cx="30" cy="25" r="5" fill="rgba(255,255,255,0.12)"></circle>
- <line x1="18" y1="22" x2="18" y2="28" stroke-width="1.2"></line>
- <line x1="15" y1="25" x2="21" y2="25" stroke-width="1.2"></line>
- <line x1="30" y1="22" x2="30" y2="28" stroke-width="1.2"></line>
- <line x1="27" y1="25" x2="33" y2="25" stroke-width="1.2"></line>
- <rect x="20" y="17" width="8" height="4" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Accessories</div>
- <div class="p-name">Cassette-Tape Teether</div>
- <div class="p-price">$14</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/35996807/pexels-photo-35996807.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(28 24 24)" stroke-width="1.1" opacity="0.4" fill="rgba(255,255,255,0.12)"></path>
- <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(6 24 24)" stroke-width="1.3" opacity="0.65" fill="rgba(255,255,255,0.14)"></path>
- <path d="M24 10c5 0 8 5 8 10 0 6-4 12-8 16-4-4-8-10-8-16 0-5 3-10 8-10z" transform="rotate(-18 24 24)" fill="rgba(255,255,255,0.2)"></path>
- <circle cx="12" cy="12" r="2" stroke-width="1.4"></circle>
- <path d="M13.4 13.4L18 18" stroke-width="1.4"></path>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Accessories</div>
- <div class="p-name">Guitar-Pick Clip Set</div>
- <div class="p-price">$16</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/6624196/pexels-photo-6624196.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="6" y="18" width="36" height="12" rx="4" fill="rgba(255,255,255,0.18)"></rect>
- <line x1="12" y1="18" x2="12" y2="30" stroke-width="1.2"></line>
- <line x1="17" y1="18" x2="17" y2="30" stroke-width="1.2"></line>
- <line x1="22" y1="18" x2="22" y2="30" stroke-width="1.2"></line>
- <line x1="27" y1="18" x2="27" y2="30" stroke-width="1.2"></line>
- <line x1="32" y1="18" x2="32" y2="30" stroke-width="1.2"></line>
- <line x1="37" y1="18" x2="37" y2="30" stroke-width="1.2"></line>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Accessories</div>
- <div class="p-name">Harmonica Teether</div>
- <div class="p-price">$14</div>
- </div>
-
- <div class="p-card">
- <span class="p-badge new">New</span>
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/7833961/pexels-photo-7833961.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <path d="M14 12V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke-width="1.4"></path>
- <path d="M10 16a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v14H10z" fill="rgba(255,255,255,0.18)"></path>
- <circle cx="17" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
- <circle cx="31" cy="23" r="5" fill="rgba(255,255,255,0.14)"></circle>
- <circle cx="17" cy="23" r="1.6" fill="white" stroke="none"></circle>
- <circle cx="31" cy="23" r="1.6" fill="white" stroke="none"></circle>
- <rect x="21" y="14" width="6" height="3" rx="1" stroke-width="1.3"></rect>
- <circle cx="12" cy="34" r="3"></circle>
- <circle cx="36" cy="34" r="3"></circle>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Toys</div>
- <div class="p-name">Wooden Boombox Push Toy</div>
- <div class="p-price">$28</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/16438729/pexels-photo-16438729.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <ellipse cx="18" cy="30" rx="15" ry="4" fill="rgba(0,0,0,0.1)"></ellipse>
- <path d="M10 30c0-9 4-17 8-17s8 8 8 17" fill="rgba(255,255,255,0.18)"></path>
- <path d="M10.5 26h15" stroke-width="1.3"></path>
- <path d="M31 22c3 1 5 3 5 5" stroke-width="1.5"></path>
- <circle cx="38" cy="30" r="3.5"></circle>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Toys</div>
- <div class="p-name">Cowboy Hat Rattle</div>
- <div class="p-price">$18</div>
- </div>
-
- <div class="p-card">
- <span class="p-badge">Best Seller</span>
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/6255730/pexels-photo-6255730.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="8" y="12" width="32" height="26" rx="8" fill="rgba(255,255,255,0.18)"></rect>
- <rect x="6" y="9" width="6" height="6" rx="2" stroke-width="1.4" fill="rgba(255,255,255,0.16)"></rect>
- <rect x="36" y="9" width="6" height="6" rx="2" stroke-width="1.4" fill="rgba(255,255,255,0.16)"></rect>
- <circle cx="18" cy="24" r="1.3" fill="white" stroke="none"></circle>
- <circle cx="30" cy="24" r="1.3" fill="white" stroke="none"></circle>
- <path d="M18 31a6 6 0 0 0 12 0" stroke-width="1.4"></path>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Toys</div>
- <div class="p-name">Plush Cassette Buddy</div>
- <div class="p-price">$26</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/3661368/pexels-photo-3661368.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
- <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
- <circle cx="24" cy="16" r="4" stroke-width="1.4"></circle>
- <line x1="24" y1="20" x2="24" y2="27" stroke-width="1.4"></line>
- <path d="M19 22a5 5 0 0 0 10 0" stroke-width="1.3"></path>
- <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Gifts</div>
- <div class="p-name">LPBD: Tupac Shakur</div>
- <div class="p-price">$15</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/8775874/pexels-photo-8775874.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
- <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
- <path d="M26 10l-8 12h6l-3 11 10-14h-6z" stroke-width="1.3" stroke-linejoin="round"></path>
- <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Gifts</div>
- <div class="p-name">LPBD: David Bowie</div>
- <div class="p-price">$15</div>
- </div>
-
- <div class="p-card">
- <div class="p-tile" style="background:linear-gradient(0deg, rgba(10,10,10,0.5), rgba(10,10,10,0) 55%), url('https://images.pexels.com/photos/3661368/pexels-photo-3661368.jpeg?auto=compress&cs=tinysrgb&w=500') center/cover;">
- <svg width="60" height="60" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
- <rect x="10" y="7" width="28" height="34" rx="2.5" fill="rgba(255,255,255,0.18)"></rect>
- <rect x="10" y="7" width="5" height="34" rx="1" opacity="0.5" fill="rgba(0,0,0,0.12)"></rect>
- <path d="M24 11l2.6 6.8 7.2 0.4-5.7 4.6 2 7-6.1-4-6.1 4 2-7-5.7-4.6 7.2-0.4z" stroke-width="1.3" stroke-linejoin="round"></path>
- <rect x="16" y="31" width="16" height="6" rx="1" stroke-width="1.3"></rect>
- </svg>
- <div class="p-reveal"><span>Quick Add +</span></div>
- </div>
- <div class="p-cat">Gifts</div>
- <div class="p-name">LPBD: Dolly Parton</div>
- <div class="p-price">$15</div>
- </div>
-
- </div>
-
- <!-- FOOTER -->
- <div style="padding:64px;display:flex;justify-content:space-between;gap:48px;border-top:1px solid var(--line);flex-wrap:wrap;">
- <div style="display:flex;flex-direction:column;gap:16px;max-width:320px;">
- <div style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:24px;">Coley <span style="color:var(--accent-dark);">Kids</span></div>
- <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">Music-themed gifts and everyday essentials for little ones.</div>
- </div>
- <div style="display:flex;gap:64px;flex-wrap:wrap;">
- <div style="display:flex;flex-direction:column;gap:12px;">
- <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Shop</div>
- <a href="shop.html" style="font-size:14px;color:var(--ink);">Apparel</a>
- <a href="shop.html" style="font-size:14px;color:var(--ink);">Accessories</a>
- <a href="shop.html" style="font-size:14px;color:var(--ink);">Toys</a>
- <a href="shop.html" style="font-size:14px;color:var(--ink);">Gifts</a>
- </div>
- <div style="display:flex;flex-direction:column;gap:12px;">
- <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);">Gift Crates</div>
- <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Old School Hip Hop</a>
- <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Rock N' Roll</a>
- <a href="gift-crates.html" style="font-size:14px;color:var(--ink);">Country</a>
- </div>
- </div>
- </div>
- <div class="site-footer-links" style="justify-content:flex-start;"><div>© 2026 Coley Kids. All rights reserved.</div></div>
-
-</div><script src="motion.js" defer></script>
+<div class="scrim"></div>
+<aside class="drawer" aria-hidden="true" aria-label="Your bag">
+  <div class="drawer-head"><h2>Your Bag</h2><button class="icon-btn" type="button" data-close-bag aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot">
+    <div class="tot"><span>Subtotal</span><b>$0</b></div>
+    <button class="btn btn-red" type="button" disabled style="opacity:.55;cursor:not-allowed">Checkout opens at launch</button>
+    <small>Preview store — no payments are taken yet.</small>
+  </div>
+</aside>
+<div class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product quick view">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close quick view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal-media"></div>
+    <div class="modal-body">
+      <p class="p-cat"></p>
+      <h2></h2>
+      <p class="mp"></p>
+      <p class="md"></p>
+      <div class="modal-sizes"><p class="opt-label">Size</p><div class="opts"><button type="button" class="opt">0–3M</button><button type="button" class="opt">3–6M</button><button type="button" class="opt">6M</button><button type="button" class="opt">12M</button><button type="button" class="opt">18M</button><button type="button" class="opt">2T</button><button type="button" class="opt">3T</button><button type="button" class="opt">4T</button><button type="button" class="opt">5T</button></div></div>
+      <button class="btn btn-ink" type="button" data-modal-add style="justify-content:center">Add to bag <span class="arrow">→</span></button>
+      <p class="b-note" style="margin:0">Sample pricing — final prices at launch.</p>
+    </div>
+  </div>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
+<script src="site.js" defer></script>
 </body>
 </html>
