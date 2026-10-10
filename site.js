@@ -29,13 +29,14 @@
     'book-hiphop': { name: 'Music Legends Board Book: Hip Hop', cat: 'Gifts', price: 15, book: { tone: 'b-red', name: 'Hip Hop Legends' }, desc: 'A first board book about the artists who built the sound. Final title chosen at launch.' },
     'book-rock': { name: 'Music Legends Board Book: Rock', cat: 'Gifts', price: 15, book: { tone: 'b-ink', name: 'Rock Legends' }, desc: 'A first board book about the artists who built the sound. Final title chosen at launch.' },
     'book-country': { name: 'Music Legends Board Book: Country', cat: 'Gifts', price: 15, book: { tone: 'b-sage', name: 'Country Legends' }, desc: 'A first board book about the artists who built the sound. Final title chosen at launch.' },
+    'book-edm': { name: 'Music Legends Board Book: EDM', cat: 'Gifts', price: 15, book: { tone: 'b-edm', name: 'EDM Legends' }, desc: 'A first board book about the producers and DJs who built the sound. Final title chosen at launch.' },
     giftbox: { name: 'Signature COLEY Crate', cat: 'Gifts', price: 10, img: 'img/crate-build.jpg?v=9', desc: 'Our wooden record crate, packed and ready. Add one to any order that is headed straight to a party.' }
   };
   var THEMES = {
     hiphop:  { name: 'Old School Hip Hop', items: ['tee', 'varsity', 'boombox', 'cassette', 'shades', 'track', 'book-hiphop'] },
     rock:    { name: "Rock N' Roll", items: ['moto', 'headphones', 'cassettes', 'sneakers', 'shades', 'cassette', 'book-rock'] },
     country: { name: 'Country', items: ['cowboy', 'overalls', 'sneakers', 'headphones', 'cassettes', 'cassette', 'book-country'] },
-    edm:     { name: 'EDM', items: ['headphones', 'tee', 'boombox', 'shades', 'sneakers', 'cassettes', 'cassette'] }
+    edm:     { name: 'EDM', items: ['headphones', 'tee', 'boombox', 'shades', 'sneakers', 'cassettes', 'book-edm'] }
   };
   var SIZES = { 3: { name: 'Starter Crate', price: 38 }, 5: { name: 'Classic Crate', price: 58 }, 7: { name: 'Deluxe Crate', price: 82 } };
 

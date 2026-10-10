@@ -113,3 +113,6 @@
 .site-footer .foot-top li a,.site-footer .foot-base,.site-footer .foot-base *{color:var(--ink) !important;}
 .site-footer .foot-top li a:hover{color:var(--orange) !important;}
 .site-footer .foot-base{border-top-color:rgba(0,107,182,.25);}
+
+/* EDM board book: Knicks blue with an electric yellow glow */
+.book.b-edm{background:radial-gradient(90% 70% at 85% 15%, rgba(255,199,44,.55), transparent 60%),radial-gradient(120% 90% at 20% 10%, #1E8AD6, #004E86);}
