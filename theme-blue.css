@@ -142,3 +142,5 @@
 .site-header.hide-logo .logo{opacity:0;transform:translateY(-16px) scale(.9);pointer-events:none;}
 /* nudge the big logo back up and slightly left of dead-centre */
 @media (min-width:901px){.hero-logo{top:-4vh;left:-5%;}}
+/* readable body copy on the yellow split hero (Give Back, etc.) */
+.split-hero p,.split-hero .lede{color:var(--ink) !important;opacity:1;}
