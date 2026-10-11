@@ -144,3 +144,21 @@
 @media (min-width:901px){.hero-logo{top:-4vh;left:-5%;}}
 /* readable body copy on the yellow split hero (Give Back, etc.) */
 .split-hero p,.split-hero .lede{color:var(--ink) !important;opacity:1;}
+
+/* ===== Oct 11 edits ===== */
+/* Header over the home hero: white nav + icons, nav sits over the photo on wide screens */
+.site-header.is-over:not(.is-scrolled){color:#FFFFFF;}
+.site-header.is-over:not(.is-scrolled) .nav-link,.site-header.is-over:not(.is-scrolled) .icon-btn{color:#FFFFFF;text-shadow:0 1px 10px rgba(0,0,0,.45);}
+.site-header.is-over:not(.is-scrolled) .icon-btn svg{filter:drop-shadow(0 1px 6px rgba(0,0,0,.45));}
+.site-header.is-over:not(.is-scrolled) .nav-link span::after{color:var(--yellow);}
+@media (min-width:1100px){body.home .site-header .nav{position:absolute;left:calc(45vw + 48px);top:50%;transform:translateY(-50%);}body.home .site-header .header-actions{grid-column:3;}}
+/* Version 1 (yellow): "Kids." in white with the blue outline */
+.hero .hero-title em,.hero h1 em{color:#FFFFFF;-webkit-text-stroke:1.5px var(--ink);}
+
+/* Version 2 (white background) — preview with ?look=white */
+html.look-white .hero{background:#FFFFFF;}
+html.look-white .hero-meta,html.look-white .hero .eyebrow{color:var(--orange) !important;}
+html.look-white .hero .hero-title em,html.look-white .hero h1 em{color:var(--orange);-webkit-text-stroke:1.5px var(--ink);}
+html.look-white .hero .hl-star path{fill:#F58426 !important;}
+html.look-white .hero .hl-star.s2 path,html.look-white .hero .hl-star.s4 path{fill:#FFC72C !important;}
+html.look-white .hero .btn-ghost{border-color:var(--ink);color:var(--ink);}
