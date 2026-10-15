@@ -162,3 +162,15 @@ html.look-white .hero .hero-title em,html.look-white .hero h1 em{color:var(--ora
 html.look-white .hero .hl-star path{fill:#F58426 !important;}
 html.look-white .hero .hl-star.s2 path,html.look-white .hero .hl-star.s4 path{fill:#FFC72C !important;}
 html.look-white .hero .btn-ghost{border-color:var(--ink);color:var(--ink);}
+
+/* Mobile: big logo first, above the kid photo */
+.hero-logo-m{display:none;}
+@media (max-width:900px){
+  .hero-logo-m{display:block;order:-2;width:min(70vw,300px);margin:calc(var(--header-h) + 34px) auto 30px;padding:0;align-self:center;justify-self:center;top:auto;left:auto;}
+  .hero-copy .hero-logo{display:none;}
+  .hero{background:var(--lead);}
+  html.look-white .hero{background:#FFFFFF;}
+  .site-header.is-over:not(.is-scrolled) .icon-btn{color:var(--ink);text-shadow:none;}
+  .site-header.is-over:not(.is-scrolled) .icon-btn svg{filter:none;}
+  .hero-badge{top:calc(66svh - 64px + var(--header-h) + 56px + min(70vw,300px) * 0.8);}
+}
