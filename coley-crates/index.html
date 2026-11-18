@@ -183,6 +183,34 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .ft{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}[data-r]{opacity:1;transform:none}}
+
+/* Shopify bag drawer + option sheet */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:90}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--paper);z-index:100;transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),visibility 0s .45s;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.drawer.on{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:20px var(--gut);border-bottom:1px solid var(--line)}
+.dr-list{list-style:none;margin:0;padding:0 var(--gut);flex:1;overflow:auto}
+.dr-list li{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.dr-list img{width:64px;height:80px;object-fit:cover;background:var(--plinth)}
+.dr-list b{font-weight:500;display:block}
+.dr-list small{color:var(--mute);display:block;margin-top:2px}
+.dr-list button{color:var(--mute);text-decoration:underline;margin-top:6px}
+.dr-list li.dr-empty{display:block;padding:40px 0;color:var(--ink-2);border:0}
+.dr-f{padding:18px var(--gut) 24px;border-top:1px solid var(--line)}
+.dr-t{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.dr-t #drTotal{font:400 22px/1 var(--serif)}
+.dr-go{width:100%;background:var(--ink);color:#fff;padding:16px;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.dr-go:disabled{opacity:.4;cursor:not-allowed}
+#drMsg{margin:10px 0 0;color:#B3261E;font-size:12px;min-height:1em}
+.sheet{position:fixed;inset:0;z-index:110;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.35)}
+.sheet[hidden]{display:none}
+.sh-in{background:var(--paper);width:min(520px,100%);padding:22px var(--gut) 28px;max-height:80vh;overflow:auto}
+.sh-h{display:flex;justify-content:space-between;margin-bottom:18px}
+.sh-opts{display:grid;gap:8px}
+.sh-opts button{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);padding:14px 16px;text-align:left}
+.sh-opts button:hover:not(:disabled){border-color:var(--ink)}
+.sh-opts button:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+@media(min-width:700px){.sheet{align-items:center}}
 </style>
 </head>
 <body>
@@ -253,7 +281,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <a class="sz" href="../gift-crates.html"><span class="lab">Classic</span><span class="serif">5 pieces</span><span>$58</span></a>
           <a class="sz" href="../gift-crates.html"><span class="lab">Deluxe</span><span class="serif">7 pieces</span><span>$82</span></a>
         </div>
-        <a class="lab ul" href="../gift-crates.html">Build a Crate</a>
+        <a class="lab ul" href="../spin/#build">Build a Crate</a>
       </div>
     </div>
   </section>
@@ -358,6 +386,17 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <nav aria-label="Mobile"><a href="#new">New</a><a href="#crates">Crates</a><a href="#shop" data-go="apparel">Apparel</a><a href="#shop" data-go="accessories">Accessories</a><a href="#shop" data-go="gifts">Gifts</a><a href="../index.html">Baby Babay</a></nav>
 </div>
 
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Your bag">
+  <div class="dr-h"><span class="lab">Your Bag</span><button type="button" class="lab" data-dr-close>Close</button></div>
+  <ul class="dr-list" id="drList"></ul>
+  <div class="dr-f"><div class="dr-t"><span class="lab">Total</span><span id="drTotal">$0</span></div><button type="button" class="dr-go" id="drGo" disabled>Checkout opens at launch</button><p id="drMsg" role="status"></p></div>
+</aside>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Choose an option" hidden>
+  <div class="sh-in"><div class="sh-h"><span class="lab" id="shTitle"></span><button class="lab" type="button" data-sh-close>Close</button></div><div class="sh-opts" id="shOpts"></div></div>
+</div>
+
+<script src="../shopify.js"></script>
 <script>
 (function(){
   var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
@@ -377,9 +416,98 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   $$('.cats button').forEach(function(b){b.addEventListener('click',function(){filter(b.dataset.cat); var g=$('#shop'); window.scrollTo({top:g.getBoundingClientRect().top+scrollY-140,behavior:'smooth'});})});
   $$('[data-go]').forEach(function(a){a.addEventListener('click',function(){filter(a.dataset.go); closeMM();})});
   filter('all');
-  // bag
-  var bag=$('.bag'), cnt=0;
-  $$('[data-add]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();cnt++;$('.n',bag).textContent=cnt;bag.classList.add('bump');b.textContent='Added';setTimeout(function(){bag.classList.remove('bump');b.textContent='Quick Add'},1200);})});
+  // bag (Shopify)
+  var bagBtn=$('.bag'), bag=[];
+  try{bag=JSON.parse(localStorage.getItem('bb-kith-bag')||'[]')||[]}catch(e){bag=[]}
+  function saveBag(){try{localStorage.setItem('bb-kith-bag',JSON.stringify(bag))}catch(e){}}
+  function live(){return !!(window.BBShop&&BBShop.isReady())}
+  function money(n){return '$'+(n%1?n.toFixed(2):String(n))}
+  // which Shopify product each card on this page sells
+  var KMAP={'Classics Heavyweight Tee':'Cool Kids Graphic Tee','Side-Stripe Track Set':'Old School Track Set','Varsity Rib Sweatsuit':"Lil' Varsity Sweatsuit Set",'Leather Moto Jacket':'Rockstar Moto Jacket','Washed Denim Overall':'Denim Overall Set','Mini Studio Headphones':'Mini Headphones','Baby Shades':'Baby Shades','Glitter High-Top':'Glitter High-Tops','Boombox Rattle':'Mini Boombox Rattle','Cassette Teether':'Cassette-Tape Teether','The Crate':'The Crate','Mixtape Plush Set':'Plush Cassette Buddy','Little Rancher Hat':'Cowboy Hat Rattle'};
+  var CMAP={'Old School':'Old School Hip Hop Crate',"Rock N' Roll":"Rock N' Roll Crate",'Country':'Country Crate','EDM':'EDM Crate'};
+  $$('.grid .card:not(.feat)').forEach(function(c){var nm=$('.nm',c);if(nm&&KMAP[nm.textContent.trim()])c.dataset.product=KMAP[nm.textContent.trim()];});
+  $$('a.crate').forEach(function(c){var t=$('.t',c);if(t&&CMAP[t.textContent.trim()])c.dataset.product=CMAP[t.textContent.trim()];});
+  function fromPrice(p){var lo=Math.min.apply(null,p.variants.map(function(v){return v.price}));var hi=Math.max.apply(null,p.variants.map(function(v){return v.price}));return (lo===hi?'':'From ')+money(lo)}
+  // once Shopify is live, names and prices on the page come from the store
+  function syncCards(){
+    if(!live())return;
+    $$('[data-product]').forEach(function(c){var p=BBShop.product(c.dataset.product);if(!p)return;
+      var nm=$('.nm',c),pr=$('.pr',c)||$('.p',c);
+      if(nm&&c.classList.contains('card'))nm.textContent=p.title;
+      if(pr)pr.textContent=fromPrice(p);});
+    $$('.card:not(.feat) [data-add]').forEach(function(b){var c=b.closest('.card');if(!c.dataset.product||!BBShop.product(c.dataset.product)){b.textContent='Coming soon';b.disabled=true;}});
+  }
+  // option sheet (sizes, crate sounds)
+  var sheet=$('#sheet');
+  function openSheet(title,opts){
+    $('#shTitle').textContent=title;var box=$('#shOpts');box.innerHTML='';
+    opts.forEach(function(o){var b=document.createElement('button');b.type='button';b.disabled=!!o.disabled;
+      var l=document.createElement('span');l.textContent=o.label;var r=document.createElement('span');r.textContent=o.sub||'';
+      b.appendChild(l);b.appendChild(r);b.addEventListener('click',function(){closeSheet();o.pick()});box.appendChild(b)});
+    sheet.hidden=false;
+  }
+  function closeSheet(){sheet.hidden=true}
+  $('[data-sh-close]').addEventListener('click',closeSheet);
+  sheet.addEventListener('click',function(e){if(e.target===sheet)closeSheet()});
+  // drawer
+  var drawer=$('#drawer'),scrim=$('#scrim'),drGo=$('#drGo'),drMsg=$('#drMsg');
+  function openDrawer(){drawer.classList.add('on');drawer.setAttribute('aria-hidden','false');scrim.hidden=false}
+  function closeDrawer(){drawer.classList.remove('on');drawer.setAttribute('aria-hidden','true');scrim.hidden=true}
+  bagBtn.addEventListener('click',openDrawer);
+  $('[data-dr-close]').addEventListener('click',closeDrawer);
+  scrim.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeSheet();closeDrawer()}});
+  function renderBag(){
+    $('.n',bagBtn).textContent=bag.length;
+    var ul=$('#drList'),tot=0;ul.innerHTML='';
+    if(!bag.length){var li=document.createElement('li');li.className='dr-empty';li.textContent='Your bag is empty.';ul.appendChild(li)}
+    bag.forEach(function(e,i){tot+=e.price;
+      var li=document.createElement('li');
+      var im=document.createElement('img');im.alt='';if(e.img)im.src=e.img;
+      var mid=document.createElement('div');var nm=document.createElement('b');nm.textContent=e.name;mid.appendChild(nm);
+      if(e.variantTitle){var sm=document.createElement('small');sm.textContent=e.variantTitle;mid.appendChild(sm)}
+      var rm=document.createElement('button');rm.type='button';rm.className='lab';rm.textContent='Remove';rm.addEventListener('click',function(){bag.splice(i,1);saveBag();renderBag()});mid.appendChild(rm);
+      var pr=document.createElement('span');pr.textContent=money(e.price);
+      li.appendChild(im);li.appendChild(mid);li.appendChild(pr);ul.appendChild(li)});
+    $('#drTotal').textContent=money(tot);
+    drGo.disabled=!(live()&&bag.length);
+    drGo.textContent=live()?(bag.length?'Checkout':'Your bag is empty'):'Checkout opens at launch';
+  }
+  function addEntry(p,v,img){
+    bag.push({name:p.title,variantTitle:p.variants.length>1?v.title:'',price:v.price,img:img||''});
+    saveBag();renderBag();bagBtn.classList.add('bump');setTimeout(function(){bagBtn.classList.remove('bump')},900);openDrawer();
+  }
+  function choose(p,img){
+    if(BBShop.needsPick(p))openSheet(p.title,p.variants.map(function(v){return{label:v.title,sub:money(v.price),disabled:!v.available,pick:function(){addEntry(p,v,img)}}}));
+    else if(p.variants[0].available)addEntry(p,p.variants[0],img);
+    else openSheet(p.title,[{label:'Sold out',sub:'',disabled:true,pick:function(){}}]);
+  }
+  // Quick Add on product cards
+  $$('[data-add]').forEach(function(b){b.addEventListener('click',function(e){
+    e.preventDefault();
+    var c=b.closest('.card'),t=c&&c.dataset.product,p=live()&&t?BBShop.product(t):null;
+    if(!p){var o=b.textContent;b.textContent=live()?'Coming soon':'Opens at launch';setTimeout(function(){b.textContent=o},1400);return}
+    var im=$('img.main',c);choose(p,im?im.src:'');
+  })});
+  // crate cards open a size sheet once the store is live (otherwise they link to the crate page)
+  $$('a.crate').forEach(function(a){a.addEventListener('click',function(e){
+    var p=live()&&a.dataset.product?BBShop.product(a.dataset.product):null;
+    if(!p)return;e.preventDefault();var im=$('img',a);choose(p,im?im.src:'');
+  })});
+  // the three crate-size tiles ask for a sound
+  $$('.sz').forEach(function(a){a.addEventListener('click',function(e){
+    if(!live())return;
+    var size=($('.lab',a).textContent||'').trim().toLowerCase();
+    var opts=Object.keys(CMAP).map(function(k){var p=BBShop.product(CMAP[k]);if(!p)return null;
+      var v=p.variants.filter(function(x){return x.title.toLowerCase().indexOf(size)===0})[0];if(!v)return null;
+      var card=$('a.crate[data-product="'+CMAP[k].replace(/"/g,'')+'"] img');
+      return{label:k,sub:money(v.price),disabled:!v.available,pick:function(){addEntry(p,v,card?card.src:'')}}}).filter(Boolean);
+    if(!opts.length)return;e.preventDefault();openSheet('Choose your sound · '+size.charAt(0).toUpperCase()+size.slice(1),opts);
+  })});
+  drGo.addEventListener('click',function(){drMsg.textContent='';drGo.disabled=true;drGo.textContent='One moment\u2026';
+    BBShop.checkout(bag).then(function(r){if(r.url){location.href=r.url;return}drMsg.textContent=r.error||'Something went wrong.';renderBag()})});
+  renderBag();
+  if(window.BBShop)BBShop.onReady(function(){syncCards();renderBag()});
   // newsletter
   var f=$('[data-join]'); if(f) f.addEventListener('submit',function(e){e.preventDefault();f.hidden=true;$('[data-ok]').hidden=false;});
   // mobile menu
