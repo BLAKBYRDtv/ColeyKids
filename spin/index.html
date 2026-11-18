@@ -414,11 +414,12 @@ html.no3d .build-3d{display:none}
 <aside class="bag" id="bag" aria-hidden="true" aria-label="Your bag">
   <div class="bag-h"><h3>Your bag</h3><button type="button" id="bagx">Close</button></div>
   <ul id="bagList"></ul>
-  <div class="bag-f"><p>Total <b id="bagTotal">$0</b></p><button class="cta" type="button" disabled>Checkout opens at launch</button></div>
+  <div class="bag-f"><p>Total <b id="bagTotal">$0</b></p><button class="cta" type="button" id="bagCheckout" disabled>Checkout opens at launch</button><p id="bagMsg" role="status" style="margin:10px 0 0;font-size:13px"></p></div>
 </aside>
 <div class="toast" id="toast" role="status"></div>
 <div class="cur" id="cur" aria-hidden="true"><span id="curl"></span></div>
 
+<script src="../shopify.js"></script>
 <script>
 /* ===================== Shared data + page UI (no 3D) ===================== */
 (function(){
@@ -500,10 +501,17 @@ function renderBag(){
     var t=x.src?'<img src="'+x.src+'" alt="">':'<span style="display:block;width:100%;height:100%;background:'+(x.book?x.book[0]:'#FFC72C')+'"></span>';
     return '<li><span class="t">'+t+'</span><span><b>'+b.name+'</b><small>'+(b.note||'')+'</small></span><span>$'+b.price+'<br><button type="button" data-rm="'+i+'">Remove</button></span></li>'}).join('');
   $('#bagTotal').textContent='$'+tot;
+  if(window.syncCheckout)syncCheckout();
 }
 D.add=function(entry){bag.push(entry);saveBag();renderBag();D.toast('Added: '+entry.name)};
 document.addEventListener('click',function(e){var r=e.target.closest('[data-rm]');if(r){bag.splice(+r.dataset.rm,1);saveBag();renderBag();}});
 renderBag();
+var ck=$('#bagCheckout'),ckMsg=$('#bagMsg');
+window.syncCheckout=function(){var live=window.BBShop&&BBShop.isReady();ck.disabled=!(live&&bag.length);ck.textContent=live?(bag.length?'Checkout':'Your bag is empty'):'Checkout opens at launch'};
+ck.addEventListener('click',function(){ckMsg.textContent='';ck.disabled=true;ck.textContent='One moment…';
+  BBShop.checkout(bag).then(function(r){if(r.url){location.href=r.url;return}ckMsg.textContent=r.error||'Something went wrong.';syncCheckout()})});
+if(window.BBShop)BBShop.onReady(function(){syncCheckout()});
+syncCheckout();
 var bagEl=$('#bag'),scrim=$('#scrim');
 function openBag(){bagEl.classList.add('on');bagEl.setAttribute('aria-hidden','false');scrim.classList.add('on');scrim.classList.remove('clear')}
 function closeBag(){bagEl.classList.remove('on');bagEl.setAttribute('aria-hidden','true');if(!panel.classList.contains('on'))scrim.classList.remove('on')}
@@ -511,10 +519,10 @@ $$('[data-bag]').forEach(function(b){b.addEventListener('click',openBag)});
 $('#bagx').addEventListener('click',closeBag);
 
 /* ---------- detail panel ---------- */
-var panel=$('#panel'),cur=null,curSize='';
+var panel=$('#panel'),cur=null,curSize='',curVar=null,curNeedsPick=false;
 D.onPanelClose=null;
 D.openPanel=function(id,from3d){
-  var x=D.byId[id];if(!x)return;cur=x;curSize='';
+  var x=D.byId[id];if(!x)return;cur=x;curSize='';curVar=null;
   panel.classList.toggle('from3d',!!from3d);
   var im=$('#pimg');
   if(x.src){im.src=x.src;im.style.display='';var bk=$('.pimg .bkc');if(bk)bk.remove();}
@@ -524,7 +532,16 @@ D.openPanel=function(id,from3d){
   $('#pprice').textContent=x.cat==='look'?'':(x.from?'From $'+x.price:'$'+x.price);
   $('#pdesc').textContent=x.desc||'';
   var ps=$('#psizes');ps.innerHTML='';
-  if(x.sizes){['0–6M','6–12M','12–24M','2T','3T','4T','5T'].forEach(function(s){var b=document.createElement('button');b.type='button';b.textContent=s;b.onclick=function(){$$('button',ps).forEach(function(q){q.classList.remove('on')});b.classList.add('on');curSize=s};ps.appendChild(b)});}
+  curNeedsPick=!!x.sizes;
+  var sp=(window.BBShop&&BBShop.isReady())?BBShop.product(x.name):null;
+  if(sp&&BBShop.needsPick(sp)){
+    curNeedsPick=true;
+    sp.variants.forEach(function(v){var b=document.createElement('button');b.type='button';b.textContent=v.title;
+      if(!v.available){b.disabled=true;b.title='Sold out'}
+      b.onclick=function(){$$('button',ps).forEach(function(q){q.classList.remove('on')});b.classList.add('on');curSize=v.title;curVar=v;$('#pprice').textContent='$'+v.price};
+      ps.appendChild(b)});
+  }else if(sp){curNeedsPick=false;$('#pprice').textContent='$'+sp.variants[0].price;}
+  else if(x.sizes){['0–6M','6–12M','12–24M','2T','3T','4T','5T'].forEach(function(s){var b=document.createElement('button');b.type='button';b.textContent=s;b.onclick=function(){$$('button',ps).forEach(function(q){q.classList.remove('on')});b.classList.add('on');curSize=s};ps.appendChild(b)});}
   var add=$('#padd'),lk=$('#plink');
   if(x.cat==='look'){add.style.display='none';lk.textContent='Pack a crate';lk.href='#build';}
   else if(x.cat==='crate'){add.style.display='none';lk.textContent=x.id==='c-build'?'Start building':'Build this crate';lk.href=x.link;}
@@ -537,7 +554,10 @@ $('#pclose').addEventListener('click',D.closePanel);
 $('#plink').addEventListener('click',function(){D.closePanel()});
 scrim.addEventListener('click',function(){D.closePanel();closeBag()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){D.closePanel();closeBag()}});
-$('#padd').addEventListener('click',function(){if(!cur)return;if(cur.sizes&&!curSize){D.toast('Pick a size first');return}D.add({id:cur.id,name:cur.name,price:cur.price,note:(curSize?'Size '+curSize+' · ':'')+cur.cat});D.closePanel()});
+$('#padd').addEventListener('click',function(){if(!cur)return;if(curNeedsPick&&!curSize){D.toast('Pick a size first');return}
+  var sp=(window.BBShop&&BBShop.isReady())?BBShop.product(cur.name):null;
+  var price=curVar?curVar.price:(sp&&!BBShop.needsPick(sp)?sp.variants[0].price:cur.price);
+  D.add({id:cur.id,name:cur.name,price:price,variantTitle:curSize||'',note:(curSize?'Size '+curSize+' · ':'')+cur.cat});D.closePanel()});
 
 /* ---------- header hide/show + solid ---------- */
 var hd=$('#hd'),lastY=0;
